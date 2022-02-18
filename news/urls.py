@@ -23,7 +23,7 @@ from core.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.articles, name="main"),
-    path('/<int:id>/', article_page, name="article"),
+    path('article/<int:id>/', article_page, name="article"),
     path('/right-panel-article/', right_panel_article, name="right_panel_articles"),
     path('heading/<int:heading_id>/', heading_page, name="heading")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
