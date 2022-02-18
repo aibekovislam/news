@@ -84,8 +84,11 @@ DATABASES = {
         'NAME': 'kyrgyzstan_news_db',
         'USER': 'root',
         'PASSWORD': 'islam2005',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '3306'
+        'OPTIONS': {
+            'read_default_file': '/etc/my.cnf',
+        }
     }
 }
 
