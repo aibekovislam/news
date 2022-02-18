@@ -86,6 +86,7 @@ DATABASES = {
         'PASSWORD': 'islam2005',
         'HOST': 'aibekovislam.mysql.pythonanywhere-services.com',
         'PORT': '3306'
+
 }
 
 
