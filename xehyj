@@ -1,0 +1,85 @@
+{% block footer %}
+    <footer class="footer-distributed mt-8">
+        <div class="container">
+        <div class="footer-left">
+
+        <h3>KYRGYZSTAN</h3>
+
+        <p class="footer-text">Новости каждый день по 9:00 до 23:00</p>
+
+        <p class="footer-company-name">KYRGYZSTAN © 2020</p>
+        </div>
+
+        <div class="footer-center">
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>ул.Шопокова, 121/1</span> Кыргызстан г.Бишкек</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+996704671157</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">islamxdaamduu@gmail.com</a></p>
+        </div>
+
+        </div>
+
+        <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>О нас</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+        </div>
+        </div>
+    </footer>
+{% endblock %}
+
+
+
+
+
+
+
+{% extends 'articles.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="mt-8">
+                <div class="ads_block">
+                  Реклама
+                </div>
+            </div>
+            <a href="#" class="text-link2 mt-7">{{ article.heading }}</a>
+            <h1 class="zago_main0">{{ article.title }}</h1>
+            <hr>
+            {% if article.picture %}
+                <img class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
+            {% endif %}
+            <p class="article_text">{{ article.text|linebreaks }}</p>
+            {% endblock %}
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+
+попробуй создать модель!

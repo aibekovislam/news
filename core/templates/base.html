@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>KYRGYZSTAN.KG - Новости каждый день!</title>
+    
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<meta name="theme-color" content="#7952b3">
+
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand logo" href="{% url 'main' %}">KYRGYZSTAN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav linkss">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="{% url 'right_panel_articles' %}">Главные новости</a>
+            </li>
+          {% for headings in heading %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'heading' headings.id %}">{{ headings.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+  </nav>
+  {% block content %}
+  {% endblock %}
+  {% block latest_news %}
+  {% endblock %}
+<footer class="footer-distributed mt-8">
+  <div class="container">
+  <div class="footer-left">
+
+  <h3>KYRGYZSTAN</h3>
+
+  <p class="footer-text">Новости каждый день по 9:00 до 23:00</p>
+
+  <p class="footer-company-name">KYRGYZSTAN © 2020</p>
+  </div>
+
+  <div class="footer-center">
+
+  <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>ул.Шопокова, 121/1</span> Кыргызстан г.Бишкек</p>
+  </div>
+
+  <div>
+      <i class="fa fa-phone"></i>
+      <p>+996704671157</p>
+  </div>
+
+  <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">islamxdaamduu@gmail.com</a></p>
+  </div>
+
+  </div>
+
+  <div class="footer-right">
+
+  <p class="footer-company-about">
+      <span>О нас</span>
+      Kyrgyzstan.kg новостной портал который будет вас освещать о последних новостях 24/7. Авторы идеи: Айбеков Ислам, Керимбаев Искендер.
+  </p>
+
+  <div class="footer-icons">
+
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+
+  </div>
+
+  </div>
+  </div>
+</footer>
+</head>
+</body>
+</html>

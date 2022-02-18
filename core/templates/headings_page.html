@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block latest_news %}
+<div class="container">
+        <div class="mt-8">
+            <div class="ads_block">
+            
+            </div>
+            <h1 class="zago_main3 mt-7 text-center mb-3">Главные новости</h1>
+        </div>
+    </div>
+    {% for articles in article %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <hr class="mb-5">
+                        <h3 class="zago_main0"><a href="{% url 'article' articles.id %}" class="link-text2">{{ articles.title }}</a></h3>
+                        <a href="#" class="text-link2 d-inline">{{ articles.heading }}</a>
+                        <p class="date_time d-inline ml-5">{{ articles.created_at }}</p>
+                        <p class="article_text mb-5">{{ articles.text|truncatechars:302 }}</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+    {% endfor %}
+{% endblock %}

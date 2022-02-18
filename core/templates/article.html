@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="mt-8">
+                <div class="ads_block">
+                  
+                </div>
+            </div>
+            <h1 class="zago_main0 mt-7">{{ article.title }}</h1>
+            <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
+            <p class="date_time d-inline ml-5">{{ article.created_at }}</p>
+            <hr>
+            {% if article.picture %}
+                <img class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
+            {% endif %}
+            {% autoescape off %}
+            <p class="article_text">{{ article.text|linebreaks }}</p>
+            {% endautoescape %}
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h2 class="mt-7 news">Последние новости</h2>
+        <hr>
+          {% for article in articles %}
+                <a class="text-link3">{{ article.heading }}</a>
+                <h6><a href="{% url 'article' article.id %}" class="link-text2">{{ article.title }}</a></h6>
+                <p class="date_time">{{ article.created_at }}</p>
+                <hr>
+          {% endfor %}
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
