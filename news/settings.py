@@ -82,11 +82,10 @@ DATABASES = {
         #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'kyrgyzstan_news_db',
-        'USER': 'root',
+        'USER': 'aibekovislam',
         'PASSWORD': 'islam2005',
-        'HOST': 'localhost',
+        'HOST': 'aibekovislam.mysql.pythonanywhere-services.com',
         'PORT': '3306'
-    }
 }
 
 
