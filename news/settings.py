@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'kyrgyzstan_news_db',
         'USER': 'root',
         'PASSWORD': 'islam2005',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '3306'
     }
 }
