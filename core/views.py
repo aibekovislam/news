@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from .models import Article, Author, HeadingArticle
 from django.shortcuts import render, HttpResponse, redirect
+from django.core.paginator import Paginator
 
 # Create your views here.
 def index(request):
@@ -11,8 +12,12 @@ def index(request):
 def articles(request):
     articles = Article.objects.all()
     heading = HeadingArticle.objects.all()
+    paginator = Paginator(articles, per_page=17)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
     context = {
-        "articles": articles,
+        "articles": page_obj.object_list,
+        "paginator": paginator,
         "heading": heading
     }
     return render(
