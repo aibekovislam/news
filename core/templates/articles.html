@@ -15,7 +15,7 @@
             <a class="text-link2">{{ article.heading }}</a>
             <h4 class="zago_main0"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h4>
             <hr>
-            <h6 class="article_text">{{ article.text|truncatechars:302 }}</h6>
+            <h6 class="article_text mb-4">{{ article.text|truncatechars:302 }}</h6>
         {% endif %}
       {% endfor %}
     </div>
@@ -24,7 +24,7 @@
         {% if article.center_article %}
           <img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
           <a class="text-link2">{{ article.heading }}</a>
-          <h6 class="news_main"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h6>
+          <h6 class="news_main mb-4"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h6>
         {% endif %}
       {% endfor %}
     </div>
