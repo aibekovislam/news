@@ -168,9 +168,6 @@
 	max-height: 480px;
 }
 
-.d-flexw{
-	display: inline-block;
-}
 
 .mr-5{
 	margin-right: 27px;
@@ -190,11 +187,22 @@
 	padding-bottom: 30px;
 }
 
+.d-flexw{
+	display: block;
+}
+
+.img-adaptive{
+	max-width: 350px;
+}
+
+
+
+
 
 .img-custom2{
-	max-width: 320px;
-	max-height: 480px;
-	display: block;
+	width: 100%;
+  	height: auto;
+	border-radius: 5px;
 	padding-right: 30px;
 }
 
