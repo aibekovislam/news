@@ -158,8 +158,9 @@
 .ads_block{
 	width: 100%;
 	height: 90px;
-	color: aliceblue;
+	color: white;
 	text-align: center;
+	/*background-color: #20252a;*/
 	font-size: 55px;
 }
 
