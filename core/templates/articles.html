@@ -14,9 +14,8 @@
       {% for article in articles %}
         {% if article.right_panel_article %}
           <hr>
-          <a class="text-link3">{{ article.heading }}</a>
           <h6><a href="{% url 'article' article.id %}" class="link-text2">{{ article.title }}</a></h6>
-          <p class="date_time">{{ article.created_at }}</p>
+          <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
         {% endif %}
       {% endfor %}
     </div>
