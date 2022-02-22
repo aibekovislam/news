@@ -92,6 +92,12 @@
 	margin-top: 10px;
 }
 
+.zago_main02{
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bolder;
+	color: black;
+}
+
 .zago_main01{
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
@@ -136,6 +142,19 @@
 }
 
 .link-text2:hover{
+	color: #1445ab;
+}
+
+
+.link-text4{
+	text-decoration: none;
+	color: black;
+	transition-duration: 0.3s;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: normal;
+}
+
+.link-text4:hover{
 	color: #1445ab;
 }
 
@@ -292,7 +311,8 @@
 }
 
 .zago_main3{
-	font-family: 'Playfair Display', serif;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bolder;
 }
 
 
