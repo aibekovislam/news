@@ -133,6 +133,7 @@
 	transition-duration: 0.3s;
 	padding: 1em;
 	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
 }
 
 .link-text2:hover{
@@ -166,6 +167,7 @@
 	color: #9c9c9c;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bolder;
+	font-size: 15px;
 }
 
 
