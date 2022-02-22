@@ -61,7 +61,7 @@
       {% for article in articles %}
           {% if not article.picture %}
             {% if not article.right_panel_article %}
-              <h6><a href="{% url 'article' article.id %}" class="link-text2">{{ article.title }}</a></h6>
+              <h6><a href="{% url 'article' article.id %}" class="link-text3">{{ article.title }}</a></h6>
               <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
               <hr >
             {% endif %}

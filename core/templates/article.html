@@ -33,8 +33,7 @@
         <h2 class="mt-7 news">Последние новости</h2>
         <hr>
           {% for article in articles %}
-                <a class="text-link3">{{ article.heading }}</a>
-                <h6><a href="{% url 'article' article.id %}" class="link-text2">{{ article.title }}</a></h6>
+                <h6><a href="{% url 'article' article.id %}" class="link-text3">{{ article.title }}</a></h6>
                 <p class="date_time">{{ article.created_at }}</p>
                 <hr>
           {% endfor %}

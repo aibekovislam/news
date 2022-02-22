@@ -95,7 +95,7 @@
 .zago_main01{
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bolder;
-	font-size: 45px;
+	font-size: 35px;
 }
 
 
@@ -115,9 +115,10 @@
 }
 
 .text-link3{
-	color: #cf1f1f;
+	color: #1445ab;
 	text-decoration: none;
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
 	margin-bottom: 15px;
 	display: block;
 }
@@ -143,8 +144,8 @@
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
-	padding: 1em;
 	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
 }
 
 .link-text3:hover{
@@ -190,7 +191,8 @@
 }
 
 .news{
-	font-family: 'Playfair Display', serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
 }
 
 .ads_block{
