@@ -12,7 +12,7 @@ def index(request):
 def articles(request):
     articles = Article.objects.all()
     heading = HeadingArticle.objects.all()
-    paginator = Paginator(articles, per_page=40)
+    paginator = Paginator(articles, per_page=42)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     context = {
