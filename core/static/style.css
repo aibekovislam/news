@@ -249,7 +249,9 @@
 }
 
 .d-flexw{
-	display: block;
+	display: inline-block;
+	margin-right: 20px;
+	padding-right: 50px;
 }
 
 .img-adaptive{
