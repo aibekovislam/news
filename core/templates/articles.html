@@ -37,7 +37,6 @@
             <a class="text-link2">{{ article.heading }}</a>
             <h4 class="zago_main0"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h4>
             <hr>
-            <h6 class="article_text2 mb-4">{{ article.text|truncatechars:302 }}</h6>
         {% endif %}
       {% endfor %}
     </div>
