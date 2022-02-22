@@ -11,7 +11,7 @@
 }
 
 .linkss{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
 }
 .mt-8{
@@ -67,7 +67,7 @@
 	font-weight: 500;
 	margin-top: 10px;
 	margin-bottom: 20px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
 
@@ -87,13 +87,13 @@
 }
 
 .zago_main0{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	margin-top: 10px;
 }
 
 .zago_main01{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	font-size: 35px;
 }
@@ -102,7 +102,7 @@
 .text-link2{
 	color: #1445ab;
 	text-decoration: none;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bold;
 	display: block;
 	margin-bottom: 5px;
@@ -117,7 +117,7 @@
 .text-link3{
 	color: #1445ab;
 	text-decoration: none;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	margin-bottom: 15px;
 	display: block;
@@ -132,7 +132,7 @@
 	color: white;
 	transition-duration: 0.3s;
 	padding: 1em;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-size: 14px;
 }
 
@@ -145,7 +145,7 @@
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
 
@@ -154,7 +154,7 @@
 }
 
 .main-news{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	margin-bottom: 40px;
 	margin-top: 30px;
@@ -165,7 +165,7 @@
 
 .date_time{
 	color: #9c9c9c;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	font-size: 10px;
 }
@@ -193,7 +193,7 @@
 }
 
 .news{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
 
@@ -259,7 +259,7 @@
 }
 
 .article_text{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
 	margin-top: 25px;
 	margin-bottom: 5px;
@@ -267,7 +267,7 @@
 
 
 .article_text2{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
 	margin-top: 25px;
 	margin-bottom: 5px;
