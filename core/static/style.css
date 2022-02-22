@@ -2,13 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Playfair+Display:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&family=Montserrat:wght@400;600&display=swap');
 
 .logo{
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+	font-family: 'Domine', serif;
 }
 
 .linkss{
-    font-family: 'PT Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
 }
 .mt-8{
     margin-top: 100px;
@@ -63,6 +67,8 @@
 	font-weight: 500;
 	margin-top: 10px;
 	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
 }
 
 .news_main2{
@@ -81,22 +87,27 @@
 }
 
 .zago_main0{
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
 	margin-top: 10px;
+}
+
+.zago_main01{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
+	font-size: 45px;
 }
 
 
 .text-link2{
-	color: #cf1f1f;
+	color: #1445ab;
 	text-decoration: none;
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
 	display: block;
 	margin-bottom: 5px;
 }
 
-.text-link2:hover{
-	color: #cf1f1f;
-}
 
 .img-m{
 	margin-bottom: 15px;
@@ -117,23 +128,43 @@
 
 .link-text2{
 	text-decoration: none;
-	color: black;
+	color: white;
 	transition-duration: 0.3s;
+	padding: 1em;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .link-text2:hover{
-	color: #cf1f1f;
+	color: #1445ab;
+}
+
+
+.link-text3{
+	text-decoration: none;
+	color: black;
+	transition-duration: 0.3s;
+	padding: 1em;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.link-text3:hover{
+	color: #1445ab;
 }
 
 .main-news{
-	font-family: 'Playfair Display', serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
 	margin-bottom: 40px;
 	margin-top: 30px;
 	display: block;
+	padding-top: 45px;
+	padding-right: 25px;
 }
 
 .date_time{
 	color: #9c9c9c;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
 }
 
 
@@ -224,7 +255,16 @@
 }
 
 .article_text{
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	margin-top: 25px;
+	margin-bottom: 5px;
+}
+
+
+.article_text2{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
 	margin-top: 25px;
 	margin-bottom: 5px;
 }
@@ -440,221 +480,12 @@
 	font-weight: normal;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-Эксперимент)
-*/
-
-
-
-  
-  
-  
-  /* --------------------------- Carousel --------------------------- */
-
-  
-  #myCarousel {
-	margin-bottom: 4rem;
-	padding-top: 3rem;
-  }
-  
-  .carousel-item {
-	height: 34rem;
-	/*background-color: #bebebe;*/
-	background-color: transparent;
-  }
-  
-  .carousel-control-next, 
-  .carousel-control-prev {
-	top: 3rem;
-	width: 10%;
-  }
-  
-  .carousel-caption {
-	height: 10rem;
-	bottom: 2rem;
-	z-index: 10;
-	left: 0;
-	right: 0;
-	padding: 1.25rem 6rem;
-	background-color: rgba(255,255,255, 0.5);
-	color: inherit;
-  }
-  
-  .carousel-caption h1 {
-	font-size: 1.5rem;
-  }
-  
-  .carousel-caption p {
-	font-size: 1rem;
-	line-height: 1.2;
-  }
-  
-  .carousel-caption .btn {
-	font-size: .85rem;
-	line-height: 1.2;
-  }
-  
-  
-  /* ---------------------- Breakpoints for the Carousel ---------------------- */
-  
-  /* --- EXtra small devices like phones - less than 360px --- */
-  @media (max-width: 359.9px) {
-	.contmin {
-	  max-width: 100%;
-	}
-	.carousel-item {
-	  height: 8rem;
-	}
-  
-	.carousel-caption {
-		height: 6rem;
-		bottom: .75rem;
-	}
-  
-	.carousel-caption h1 {
-	  font-size: .85rem;
-	  font-weight: bold;
-	}
-	.carousel-caption p {
-	  font-size: .6rem;
-	  font-weight: bold;
-	  line-height: 1;
-	}
-	.carousel-caption .btn {
-	  font-size: .5rem;
-	  line-height: 1;
-	}
-  }
-  
-  /* --- Small devices like phones - starting at 360px ---*/
-  @media (min-width: 360px) {
-	.contmin {
-	  max-width: 100%;
-	}
-	.carousel-item {
-	  height: 12rem;
-	}
-	.carousel-caption {
-	  height: 8rem;
-	}
-  }
-  
-  /* --- Medium devices like tablets - starting at 600px ---*/
-  @media (min-width: 600px) {
-	.contmin {
-	  max-width: 100%;
-	}
-	.carousel-item {
-	  height: 20rem;
-	}
-	.carousel-caption {
-	  height: 9rem;
-	}  
-  }
-  
-  /* --- Medium devices like tablets - starting at 758px ---*/
-  @media (min-width: 758px) {
-	.contmin {
-	  max-width: 90%;
-	}
-	.carousel-item {
-	  height: 24rem;
-	}
-	.carousel-caption {
-	  height: 10rem;
-	}  
-  }
-  
-  /* --- Tablets, Laptops - starting at 1024px ---*/
-  @media (min-width: 1024px) {
-	.contmin {
-	  max-width: 90%;
-	}
-	.carousel-item {
-	  height: 28rem;
-	}
-  }
-  
-  /* --- Tablets, Laptops - starting at 1280px ---*/
-  @media (min-width: 1280px) {
-	.contmin {
-	  max-width: 80%;
-	}
-	.carousel-item {
-	  height: 32rem;
-	}
-	.carousel-caption {
-	  padding-left: 7rem;
-	  padding-right: 7rem;
-	}
-  }
-  
-  /* --- Laptops, Desktops - starting at 1366px ---*/
-  @media (min-width: 1366px) {
-	.contmin {
-	  max-width: 80%;
-	}
-	.carousel-caption {
-	  padding-left: 7.5rem;
-	  padding-right: 7.5rem;
-	}  
-  }
-  
-  /* --- Desktops - starting at 1536px ---*/
-  @media (min-width: 1536px) {
-	.contmin {
-	  max-width: 70%;
-	}
-	.carousel-caption {
-	  padding-left: 8rem;
-	  padding-right: 8rem;
-	}  
-  }
-  
-  /* --- Desktops - starting at 1680px ---*/
-  @media (min-width: 1680px) {
-	.contmin {
-	  max-width: 70%;
-	}
-	.carousel-caption {
-	  padding-left: 8.5rem;
-	  padding-right: 8.5rem;
-	}  
-  }
-  
-  /* --- Desktops - starting at 1920px ---*/
-  @media (min-width: 1920px) {
-	.contmin {
-	  max-width: 60%;
-	}
-	.carousel-caption {
-	  padding-left: 9rem;
-	  padding-right: 9rem;
-	}  
-  }
-  
-  /* --------------------------- Carousel END --------------------------- */
+.black_block_news{
+	background-color: #20252a;
+	max-width: 500px;
+	color: white;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 25px;
+	height: auto;
+}

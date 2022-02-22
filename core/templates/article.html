@@ -10,14 +10,14 @@
                   
                 </div>
             </div>
-            <h1 class="zago_main0 mt-7">{{ article.title }}</h1>
+            <h1 class="zago_main01 mt-7">{{ article.title }}</h1>
             <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
             <p class="date_time d-inline ml-5">{{ article.created_at }}</p>
             <hr>
             {% if article.picture %}
                 <img class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
             {% endif %}
-            {% autoescape off %}
+            {% autoescape on %}
             <p class="article_text">{{ article.text|linebreaks }}</p>
             {% endautoescape %}
             <div class="col-md-1"></div>
