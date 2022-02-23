@@ -70,6 +70,7 @@
               {% if article.picture %}
                 {% if not article.main_article %}
                   {% if not article.center_article %}
+                      {% if not article.right_panel_article %}
                             <div class="d-flexw">
                               <div class="mb-2 mr-5" style="width: 18rem;">
                               <img src="{{ article.picture.url }}" class="img-adaptive mr-7" alt="...">
@@ -78,6 +79,7 @@
                                 </div>
                               </div>
                             </div>
+                      {% endif %}
                   {% endif %}
                 {% endif %}
               {% endif %}
