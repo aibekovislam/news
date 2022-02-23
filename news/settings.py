@@ -78,14 +78,14 @@ WSGI_APPLICATION = 'news.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'kyrgyzstan_news_db',
-        #'USER': 'aibekovislam',
-        #'PASSWORD': 'islam2005',
-        #'HOST': 'aibekovislam.mysql.pythonanywhere-services.com',
-        #'PORT': '3306'
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'aibekovislam$kyrgyzstan_news_db',
+        'USER': 'aibekovislam',
+        'PASSWORD': 'islam2005',
+        'HOST': 'aibekovislam.mysql.pythonanywhere-services.com',
+        'PORT': '3306'
     }
 }
 
