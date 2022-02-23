@@ -11,6 +11,7 @@ def index(request):
 
 def articles(request):
     articles = Article.objects.all()
+    articles = Article.objects.order_by('-created_at')
     heading = HeadingArticle.objects.all()
     paginator = Paginator(articles, per_page=42)
     page_number = request.GET.get('page', 1)
