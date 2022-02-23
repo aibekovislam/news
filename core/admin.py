@@ -13,10 +13,10 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'is_active', 'updated_at', 'heading')
     list_editable = ('is_active', 'heading')
     ordering = ['-created_at']
-    list_filter = ['is_active', 'updated_at', 'main_article', 'center_article', 'right_panel_article']
+    list_filter = ['is_active', 'updated_at', 'main_article', 'center_article', 'right_panel_article', 'text_article']
     search_fields = ['title', 'text']
 
-    fields = ('title', 'text', 'picture', 'created_at', 'updated_at', 'main_article', 'center_article', 'right_panel_article', 'heading')
+    fields = ('title', 'text', 'picture', 'created_at', 'updated_at', 'main_article', 'center_article', 'right_panel_article', 'text_article', 'heading')
     readonly_fields = ('created_at', 'updated_at')
 
 admin.site.register(Article, ArticleAdmin)

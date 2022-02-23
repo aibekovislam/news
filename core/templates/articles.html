@@ -58,15 +58,18 @@
   <div class="row">
     <div class="col-md-8">
       {% for article in articles %}
+        {% if article.text_article %}
             {% if not article.right_panel_article %}
               <h6><a href="{% url 'article' article.id %}" class="link-text3">{{ article.title }}</a></h6>
               <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
               <hr >
             {% endif %}
+          {% endif %}
         {% endfor %}
     </div>
     <div class="col-md-4">
       {% for article in articles %}
+          {% if not article.text_article %}
               {% if article.picture %}
                 {% if not article.main_article %}
                   {% if not article.center_article %}
@@ -79,6 +82,7 @@
                                 </div>
                               </div>
                             </div>
+                        {% endif %}
                       {% endif %}
                   {% endif %}
                 {% endif %}

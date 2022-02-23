@@ -37,6 +37,8 @@ class Article(models.Model):
 
     main_article = models.BooleanField(default=False, verbose_name=_("Первая новость"))
 
+    text_article = models.BooleanField(default=False, verbose_name=_("Текстовые новости"))
+
     center_article = models.BooleanField(default=False)
 
     right_panel_article = models.BooleanField(default=False, verbose_name=_("Главные новости"))
