@@ -249,8 +249,7 @@
 }
 
 .d-flexw{
-	display: inline-block;
-	margin-right: 50px;
+	display: block;
 }
 
 .img-adaptive{
