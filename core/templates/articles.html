@@ -26,7 +26,7 @@
         {% if article.center_article %}
           <img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
           <a class="text-link2">{{ article.heading }}</a>
-          <h6 class="news_main mb-4"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h6>
+          <h6 class="news_main"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h6>
         {% endif %}
       {% endfor %}
     </div>

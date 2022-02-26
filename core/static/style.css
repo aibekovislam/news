@@ -79,8 +79,7 @@ body{
 .news_main{
 	line-height: 1.5;
 	font-weight: 500;
-	margin-top: 10px;
-	margin-bottom: 20px;
+	margin-top: 1px;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
@@ -104,6 +103,7 @@ body{
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	margin-top: 10px;
+	font-size: 17px;
 }
 
 .zago_main02{
@@ -125,13 +125,12 @@ body{
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bold;
 	display: block;
-	margin-bottom: 5px;
 }
 
 
 .img-m{
-	margin-bottom: 15px;
-	margin-top: 15px;
+	margin-bottom: 5px;
+	margin-top: 10px;
 }
 
 .text-link3{
