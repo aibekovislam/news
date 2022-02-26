@@ -89,18 +89,18 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <ul class="pagination">
-        {% for i in paginator.page_range %}
-          <li class="page-item">
-            <a href="?page={{ i }}" class="page-link">{{ i }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 col-sm-4"></div>
+    <div class="col-md-4 col-sm-4">
+        <ul class="pagination">
+          {% for i in paginator.page_range %}
+            <li class="page-item {% if i == page_number %}active{% endif %}">
+              <a href="?page={{ i }}" class="page-link">{{ i }}</a>
+            </li>
+          {% endfor %}
+        </ul>
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4 col-sm-4"></div>
   </div>
 </div>
 

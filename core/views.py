@@ -19,7 +19,8 @@ def articles(request):
     context = {
         "articles": page_obj.object_list,
         "paginator": paginator,
-        "heading": heading
+        "heading": heading,
+        "page_number": int(page_number)
     }
     return render(
         request,

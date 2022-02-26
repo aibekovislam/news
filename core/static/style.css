@@ -333,6 +333,17 @@ body{
 
 
 
+.paginations:hover{
+	border: 3px solid #1445ab;
+}
+
+
+.page-links{
+	text-decoration: none;
+	color: black;
+}
+
+
 
 
 
