@@ -266,7 +266,8 @@ body{
 }
 
 .img-adaptive{
-	max-width: 350px;
+	max-width: 320px;
+	height: auto;
 }
 
 .mr-7{
@@ -529,7 +530,7 @@ body{
 
 .black_block_news{
 	background-color: #20252a;
-	max-width: 525px;
+	max-width: 650px;
 	color: white;
 	padding-left: 25px;
 	padding-right: 25px;
