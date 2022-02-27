@@ -282,6 +282,17 @@ body{
 
 
 
+.link-text5{
+	text-decoration: none;
+	color: black;
+	transition-duration: 0.3s;
+}
+
+.link-text5:hover{
+	color: #7d7d7d;
+}
+
+
 .text_in_img{
 	position: relative;
 }

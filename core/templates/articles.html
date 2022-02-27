@@ -29,6 +29,12 @@
           <h6 class="news_main"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h6>
         {% endif %}
       {% endfor %}
+      {% for article in articles %}
+        {% if article.margin_article_text %}
+          <hr class="mt-4">
+          <h6 class="news_main"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h6>
+        {% endif %}
+      {% endfor %}
     </div>
     <div class="col-md-4 mt-4">
       {% for article in articles %}
