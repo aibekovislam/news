@@ -79,7 +79,7 @@ body{
 .news_main{
 	line-height: 1.5;
 	font-weight: 500;
-	margin-top: 5px;
+	margin-top: 1px;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
@@ -102,7 +102,7 @@ body{
 .zago_main0{
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
-	margin-top: 5px;
+	margin-top: 10px;
 	font-size: 17px;
 }
 
@@ -271,8 +271,8 @@ body{
 }
 
 .img-adaptive{
-	width: 100%;
-	max-height: 300px;
+	max-width: 320px;
+	height: auto;
 }
 
 .mr-7{
