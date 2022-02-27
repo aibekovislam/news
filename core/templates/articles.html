@@ -24,7 +24,7 @@
     <div class="col-md-3 mt-4">
       {% for article in articles %}
         {% if article.center_article %}
-          <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
+          <img class="img-adaptive img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
           <a class="text-link2">{{ article.heading }}</a>
           <h6 class="news_main"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h6>
         {% endif %}
@@ -33,7 +33,7 @@
     <div class="col-md-3 mt-4">
       {% for article in articles %}
         {% if article.main_article %}
-            <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
+            <img class="img-adaptive img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
             <a class="text-link2">{{ article.heading }}</a>
             <h4 class="zago_main0"><a href="{% url 'article' article.id %}" class="link-text">{{ article.title }}</a></h4>
         {% endif %}
