@@ -22,6 +22,7 @@ from django.views.generic import RedirectView
 from django.conf.urls.static import static
 from core.views import *
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.articles, name="main"),
