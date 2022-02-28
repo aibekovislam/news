@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 
 body{
@@ -586,6 +587,23 @@ body{
 
 
 
+.com_text{
+	text-align: center;
+	color: #7d7d7d;
+	font-family: 'Lato', sans-serif;
+}
 
+.comments{
+	width: auto;
+	height: auto;
+	background-color: white;
+	border: 1px solid black;
+}
+
+.author{
+	text-align: center;
+	color: black;
+	font-family: 'Lato', sans-serif;
+}
 
 
