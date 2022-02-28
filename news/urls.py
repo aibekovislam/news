@@ -20,7 +20,15 @@ from django.conf import settings
 from django.conf.urls import url
 from django.views.generic import RedirectView
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from core.sitemap import AriclesSitemap 
 from core.views import *
+
+
+sitemaps = { 
+    'articles': AriclesSitemap
+}
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +36,7 @@ urlpatterns = [
     path('article/<int:id>/', article_page, name="article"),
     path('article/right-panel-article/', right_panel_article, name="right_panel_articles"),
     path('heading/<int:heading_id>/', heading_page, name="heading"),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicons/favicon.ico', permanent=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
