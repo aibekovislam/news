@@ -153,7 +153,7 @@ body{
 
 .link-text2{
 	text-decoration: none;
-	color: white;
+	color: black;
 	transition-duration: 0.3s;
 	font-family: 'PT Sans', sans-serif;
 }
@@ -191,11 +191,16 @@ body{
 .main-news{
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 	margin-top: 30px;
 	display: block;
-	padding-top: 45px;
+	padding-top: 30px;
 	padding-right: 25px;
+}
+
+.line{
+	background-color: #964a4a;
+	border: 1px solid #964a4a;
 }
 
 .date_time{
@@ -549,9 +554,9 @@ body{
 }
 
 .black_block_news{
-	background-color: #20252a;
+	background-color: #f5f5f6;
 	max-width: 650px;
-	color: white;
+	color: black;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-bottom: 25px;
@@ -566,6 +571,18 @@ body{
 
 
 
+
+/* 
+
+Эксперимент
+
+*/
+
+
+.bg-custom{
+	background-color: #20252a;
+
+}
 
 
 
