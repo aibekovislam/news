@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from django.shortcuts import reverse
 
 
 class Article(models.Model):
@@ -54,6 +55,10 @@ class Article(models.Model):
         null=True, blank=True,
         verbose_name="Главная картинка статьи"    
     )
+
+    def get_absolute_url(self):
+        return reverse("article", args=[str(self.id)])
+    
 
     def __str__(self):
         return self.title

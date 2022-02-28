@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
+from django.shortcuts import HttpResponse, get_object_or_404
 from .models import Article, Author, HeadingArticle
 from django.shortcuts import render, HttpResponse, redirect
 from django.core.paginator import Paginator
+
 
 # Create your views here.
 def index(request):
@@ -39,7 +40,7 @@ def main_articles(request):
 
 
 def article_page(request, id):
-    article = Article.objects.get(id=id)
+    article = get_object_or_404(Article, id=id)
     articles = Article.objects.all()
     articles = Article.objects.order_by('-created_at')
     heading = HeadingArticle.objects.all()
