@@ -43,7 +43,7 @@
 
 <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         {% for article in articles %}
             {% if article.main_article %}
                 <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
@@ -53,7 +53,7 @@
             {% endif %}
           {% endfor %}
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
           {% for article in articles %}
             {% if article.center_article %}
                 <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
@@ -63,15 +63,6 @@
             {% endif %}
           {% endfor %}
         </div>
-        <div class="col-md-4">
-          {% for article in articles %}
-            {% if article.picture %}
-                <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
-                <h6><a href="{% url 'article' article.id %}" class="link-text3">{{ article.title }}</a></h6>
-                <p class="date_time">{{ article.created_at }}</p>
-                <hr>
-            {% endif %}
-          {% endfor %}
         </div>
       </div>
     </div>
