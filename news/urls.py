@@ -33,7 +33,7 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.articles, name="main"),
-    path('article/<int:id>/', article_page, name="article"),
+    path('article/<slug:article_slug>/', article_page, name="article"),
     path('article/right-panel-article/', right_panel_article, name="right_panel_articles"),
     path('heading/<int:heading_id>/', heading_page, name="heading"),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),

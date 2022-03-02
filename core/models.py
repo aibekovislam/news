@@ -7,6 +7,7 @@ from django.shortcuts import reverse
 class Article(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
+    slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL", null=True, blank=True)
     author = models.ForeignKey(
         to="Author",
         on_delete=models.SET_NULL,
@@ -57,7 +58,7 @@ class Article(models.Model):
     )
 
     def get_absolute_url(self):
-        return reverse("article", args=[str(self.id)])
+        return reverse("article", kwargs={'article_slug': self.slug})
     
 
     def __str__(self):

@@ -39,8 +39,8 @@ def main_articles(request):
     )
 
 
-def article_page(request, id):
-    article = get_object_or_404(Article, id=id)
+def article_page(request, article_slug):
+    article = get_object_or_404(Article, slug=article_slug)
     articles = Article.objects.all()
     articles = Article.objects.order_by('-created_at')
     heading = HeadingArticle.objects.all()

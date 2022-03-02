@@ -53,7 +53,7 @@
         {% for article in articles %}
             {% if article.main_article %}
                 <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
-                <h6><a href="{% url 'article' article.id %}" class="link-text3">{{ article.title }}</a></h6>
+                <h6><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h6>
                 <p class="date_time">{{ article.created_at }}</p>
                 <hr>
             {% endif %}
@@ -62,7 +62,7 @@
       <div class="col-md-4 mt-2">
         {% for article in articles %}
           {% if article.right_panel_article %}
-            <h6><a href="{% url 'article' article.id %}" class="link-text2">{{ article.title }}</a></h6>
+            <h6><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h6>
             <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
             <hr>
           {% endif %}
