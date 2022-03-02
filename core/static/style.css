@@ -101,6 +101,10 @@ body{
 .zago_main01{
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
+	font-size: 30px;
+	line-height: 30px;
+	display: block;
+	margin-bottom: 15px;
 }
 
 
