@@ -30,7 +30,7 @@
                 <img class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
             {% endif %}
             {% autoescape off %}
-            <p class="article_text2">{{ article.text }}</p>
+            <p class="article_text2">{{ article.text|linebreaksbr }}</p>
             {% endautoescape %}
             <div class="col-md-2"></div>
         </div>
