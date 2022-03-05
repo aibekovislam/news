@@ -19,6 +19,7 @@ from core import views
 from django.conf import settings
 from django.conf.urls import url
 from django.views.generic import RedirectView
+from django.views.generic.base import TemplateView
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from core.sitemap import AriclesSitemap 
@@ -36,6 +37,7 @@ urlpatterns = [
     path('article/<slug:article_slug>/', article_page, name="article"),
     path('article/right-panel-article/', right_panel_article, name="right_panel_articles"),
     path('heading/<int:heading_id>/', heading_page, name="heading"),
+    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicons/favicon.ico', permanent=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
