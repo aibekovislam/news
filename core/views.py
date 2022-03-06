@@ -14,10 +14,14 @@ def articles(request):
     articles = Article.objects.all()
     articles = Article.objects.order_by('-created_at')
     heading = HeadingArticle.objects.all()
+    main_article = Article.main_article
+    main_paginator = Paginator(main_article, per_page=3)
     paginator = Paginator(articles, per_page=30)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     context = {
+        "main_article": page_obj.object_list,
+        "main_paginator": main_paginator,
         "articles": page_obj.object_list,
         "paginator": paginator,
         "heading": heading,
