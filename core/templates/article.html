@@ -26,7 +26,7 @@
             <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
             <p class="date_time d-inline ml-5">{{ article.created_at|date:"d-m H:i" }}</p>
             {% if article.picture %}
-                <img class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
+                <img class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
             {% endif %}
             {% autoescape off %}
             <p class="article_text2">{{ article.text|linebreaksbr }}</p>
