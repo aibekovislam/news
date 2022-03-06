@@ -35,12 +35,12 @@ def articles(request):
 
 
 
-def main_articles(request):
-    main_articles = Main_Article.objects.all()
-    return render(
-        request,
-        {"main_article": main_articles}
-    )
+#def main_articles(request):
+ #   main_articles = Main_Article.objects.all()
+  #  return render(
+   #     request,
+    #    {"main_article": main_articles}
+    #)
 
 
 def article_page(request, article_slug):

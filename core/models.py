@@ -5,7 +5,7 @@ from django.shortcuts import reverse
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, null=True, blank=True)
     text = models.TextField()
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL", null=True, blank=True)
     author = models.ForeignKey(
