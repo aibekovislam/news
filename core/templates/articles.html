@@ -26,7 +26,7 @@
         <hr class="line">
         {% for article in articles %}
           {% if article.right_panel_article %}
-          <a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a>
+            <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
             <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
             <hr>
           {% endif %}
