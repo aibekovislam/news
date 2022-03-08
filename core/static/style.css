@@ -18,7 +18,6 @@ body{
 }
 
 
-
 .logo{
     font-family: 'Montserrat Alternates', sans-serif;
 	font-size: 30px;
@@ -147,13 +146,13 @@ body{
 	color: #cf1f1f;
 }
 
-/*.link-text2{
+.link-text2{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
 	font-family: 'PT Sans', sans-serif;
 	font-size: 17px;
-}*/
+}
 
 .link-text2:hover{
 	color: #1445ab;
@@ -175,15 +174,6 @@ body{
 
 .revolut{
 	font-size: 17px;
-	color: black;
-	transition-duration: 0.3s;
-	font-family: 'PT Sans', sans-serif;
-	font-size: 17px;
-}
-
-.revolut a{
-	text-decoration: none;
-	color: black;
 }
 
 .link-text3{
