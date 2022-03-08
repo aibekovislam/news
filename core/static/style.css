@@ -70,6 +70,7 @@ body{
 	line-height: 1.5;
 	font-weight: 500;
 	margin-top: 1px;
+	font-size: 17px;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
@@ -98,6 +99,7 @@ body{
 
 .zago_main02{
 	font-family: 'PT Sans', sans-serif;
+	font-size: 20px;
 	font-weight: bolder;
 	color: black;
 }
@@ -168,6 +170,10 @@ body{
 	color: #1445ab;
 }
 
+
+.revolut{
+	font-size: 17px;
+}
 
 .link-text3{
 	text-decoration: none;
@@ -312,6 +318,7 @@ body{
 
 .article_text2{
 	font-family: 'Source Serif Pro', serif;
+	font-size: 20px;
 	font-weight: normal;
 	margin-top: 25px;
 	margin-bottom: 5px;

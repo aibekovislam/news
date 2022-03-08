@@ -27,7 +27,7 @@
                         <h3 class="zago_main3 mt-7 mb-4 text-md-start">Лента новостей</h3>
                         <hr class="mb-5">
                         {% for articles in article %}
-                        <h5 class="zago_main02"><a href="{% url 'article' articles.slug %}" class="link-text4">{{ articles.title }}</a></h5>
+                        <h1 class="zago_main02"><a href="{% url 'article' articles.slug %}" class="link-text4">{{ articles.title }}</a></h1>
                         <p class="date_time mr-5">{{ articles.created_at|date:"Y-m-d H:i" }}</p>
                         <hr class="mt-4">
                         {% endfor %}
