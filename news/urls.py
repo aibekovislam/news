@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from cgitb import handler
 from django.contrib import admin
 from django.urls import path
 from core import views
@@ -24,6 +25,7 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from core.sitemap import AriclesSitemap 
 from core.views import *
+from django.views.static import serve
 
 
 sitemaps = { 
@@ -41,9 +43,13 @@ urlpatterns = [
     path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain"), name="robots"),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicons/favicon.ico', permanent=True)),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+handler404=HandleNotFound
 
 # businessman 
 # Islam123123#

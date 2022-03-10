@@ -46,6 +46,16 @@ def article_page_2(request):
 
 
 
+def HandleNotFound(request, exception):
+    articles = Article.objects.all()
+    heading = HeadingArticle.objects.all()
+    context={
+        "articles": articles,
+        "heading": heading
+    }
+    return render(request, "404.html", context=context, status=404)
+    
+
 #def main_articles(request):
  #   main_articles = Main_Article.objects.all()
   #  return render(
