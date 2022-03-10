@@ -1,5 +1,7 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import BooleanField
 from django.utils.translation import gettext_lazy as _
 from django.shortcuts import reverse
 
@@ -46,6 +48,10 @@ class Article(models.Model):
     center_article = models.BooleanField(default=False)
 
     right_panel_article = models.BooleanField(default=False, verbose_name=_("Главные новости"))
+
+    pagination_article = models.BooleanField(default=False, verbose_name=_("Текстовые новости на второй странице"))
+
+    pagination_picture_article = models.BooleanField(default=False, verbose_name=("Новости для вторых страниц с картинками"))
     
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -106,8 +112,6 @@ class HeadingArticle(models.Model):
         return self.title
 
     
-
-
 
 
 

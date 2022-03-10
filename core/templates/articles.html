@@ -112,14 +112,18 @@
                 {% if not article.main_article %}
                   {% if not article.center_article %}
                       {% if not article.right_panel_article %}
-                            <div class="d-flexw">
-                              <div class="mb-2 mr-5" style="width: 18rem;">
-                              <img src="{{ article.picture.url }}" class="img-adaptive mr-7" alt="...">
-                                <div class="card-body">
-                                  <h1 class="revolut mt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
+                          {% if not article.pagination_article %}
+                            {% if not article.pagination_picture_article %}
+                              <div class="d-flexw">
+                                <div class="mb-2 mr-5" style="width: 18rem;">
+                                <img src="{{ article.picture.url }}" class="img-adaptive mr-7" alt="...">
+                                  <div class="card-body">
+                                    <h1 class="revolut mt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
+                            {% endif %}
+                          {% endif %}
                         {% endif %}
                       {% endif %}
                   {% endif %}
@@ -135,11 +139,9 @@
     <div class="col-md-4 col-sm-4"></div>
     <div class="col-md-4 col-sm-4">
         <ul class="pagination">
-          {% for i in paginator.page_range %}
-            <li class="page-item {% if i == page_number %}active{% endif %}">
-              <a href="?page={{ i }}" class="page-link">{{ i }}</a>
+            <li class="page-item">
+              <a href="{% url 'article_page_2' %}" class="page-link">Следующая</a>
             </li>
-          {% endfor %}
         </ul>
     </div>
     <div class="col-md-4 col-sm-4"></div>

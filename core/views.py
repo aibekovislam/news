@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from django.shortcuts import HttpResponse, get_object_or_404
 from .models import Article, Author, HeadingArticle
@@ -14,14 +15,10 @@ def articles(request):
     articles = Article.objects.all()
     articles = Article.objects.order_by('-created_at')
     heading = HeadingArticle.objects.all()
-    main_article = Article.main_article
-    main_paginator = Paginator(main_article, per_page=3)
-    paginator = Paginator(articles, per_page=30)
+    paginator = Paginator(articles, per_page=40)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     context = {
-        "main_article": page_obj.object_list,
-        "main_paginator": main_paginator,
         "articles": page_obj.object_list,
         "paginator": paginator,
         "heading": heading,
@@ -32,6 +29,20 @@ def articles(request):
         "articles.html",
         context=context
     )
+
+def article_page_2(request):
+    articles = Article.objects.all()
+    heading = HeadingArticle.objects.all()
+    paginator = Paginator(articles, per_page=40)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+    context = {
+        "articles": page_obj.object_list,
+        "paginator": paginator,
+        "heading": heading,
+        "page_number": int(page_number)
+    }
+    return render(request, "articles2.html", context=context)
 
 
 
