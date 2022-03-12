@@ -89,17 +89,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <div class="container">
   <h2 class="mt-7 news">Новости</h2>
   <hr class="mb-5">
@@ -108,8 +97,8 @@
       {% for article in articles %}
         {% if article.text_article %}
             {% if not article.right_panel_article %}
-              <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
-              <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
+              <p class="date_time2 d-inline">{{ article.created_at|date:"l H:i" }}</p>
+              <h1 class="revolut d-inline"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
               <hr >
             {% endif %}
           {% endif %}
