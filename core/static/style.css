@@ -33,7 +33,7 @@ body{
 
 .linkss{
 	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: normal;
+	font-weight: bold;
 }
 .mt-8{
     margin-top: 100px;
@@ -162,6 +162,7 @@ body{
 	color: black;
 	transition-duration: 0.3s;
 	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
 	font-size: 17px;
 }
 
@@ -202,6 +203,7 @@ body{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
+	font-weight: bold;
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
