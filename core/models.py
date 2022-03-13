@@ -1,7 +1,7 @@
 from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
-from django.forms import BooleanField
+from django.forms import BooleanField, ImageField
 from django.utils.translation import gettext_lazy as _
 from django.shortcuts import reverse
 
@@ -111,7 +111,20 @@ class HeadingArticle(models.Model):
     def __str__(self):
         return self.title
 
+
+
+class Carousel(models.Model):
+    picture = models.ImageField(upload_to='carousel_image')
+    title = models.CharField(max_length=150)
+    text = models.TextField()    
     
+    class Meta:
+        verbose_name = "Карусель"
+        verbose_name_plural = "Карусель"
+
+
+    def __str__(self):
+        return self.title
 
 
 

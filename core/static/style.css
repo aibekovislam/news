@@ -326,6 +326,11 @@ body{
 	margin-left: 0;
 }
 
+.carousel_text{
+	position: absolute;
+	top: 150px;
+}
+
 
 
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Article, Author, ArticleImage, HeadingArticle
+from core.models import Article, Author, ArticleImage, Carousel, HeadingArticle
 
 # Register your models here.
 
@@ -21,4 +21,5 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(HeadingArticle)
+admin.site.register(Carousel)
 # Register your models here.

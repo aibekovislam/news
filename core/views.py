@@ -1,7 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render
 from django.shortcuts import HttpResponse, get_object_or_404
-from .models import Article, Author, HeadingArticle
+from .models import *
 from django.shortcuts import render, HttpResponse, redirect
 from django.core.paginator import Paginator
 
@@ -14,6 +14,7 @@ def index(request):
 def articles(request):
     articles = Article.objects.all()
     articles = Article.objects.order_by('-created_at')
+    obj = Carousel.objects.all()
     heading = HeadingArticle.objects.all()
     paginator = Paginator(articles, per_page=40)
     page_number = request.GET.get('page', 1)
@@ -22,6 +23,7 @@ def articles(request):
         "articles": page_obj.object_list,
         "paginator": paginator,
         "heading": heading,
+        "obj": obj,
         "page_number": int(page_number)
     }
     return render(
