@@ -192,6 +192,8 @@ body{
 
 .revolut{
 	font-size: 17px;
+	display: table-cell;
+	line-height: 1.5em;
 }
 
 .link-text3{
@@ -199,7 +201,6 @@ body{
 	color: black;
 	transition-duration: 0.3s;
 	font-family: 'PT Sans', sans-serif;
-	font-weight: bolder;
 }
 
 .link-text3:hover{
@@ -235,11 +236,14 @@ body{
 
 
 .date_time2{
-	color: #9c9c9c;
+	width: 47px;
+	color: #96a3b0;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
+	float: left;
+	padding-top: 3px;
 	font-size: 13px;
-	margin-right: 13px;
+	/*margin-right: 13px;*/
 }
 
 
