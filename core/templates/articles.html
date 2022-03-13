@@ -115,10 +115,8 @@
                             {% if not article.pagination_picture_article %}
                               <div class="d-flexw">
                                 <div class="mb-2 mr-5" style="width: 18rem;">
-                                <img src="{{ article.picture.url }}" class="img-adaptive mr-7" alt="...">
-                                  <div class="card-body">
-                                    <h1 class="revolut mt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
-                                  </div>
+                                <img src="{{ article.picture.url }}" class="img-adaptive mr-7 mb-3" alt="...">
+                                <h1 class="revolut mt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
                                 </div>
                               </div>
                             {% endif %}
