@@ -11,7 +11,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 
 body{
 	background-color: #e8e8e8;
@@ -32,8 +31,8 @@ body{
 }
 
 .linkss{
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: bold;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: normal;
 }
 .mt-8{
     margin-top: 100px;
@@ -72,7 +71,7 @@ body{
 	font-weight: 500;
 	margin-top: 1px;
 	font-size: 17px;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
 
@@ -92,7 +91,7 @@ body{
 }
 
 .zago_main0{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	margin-top: 10px;
 	font-size: 17px;
@@ -109,7 +108,7 @@ body{
 }
 
 .zago_main02{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-size: 20px;
 	font-weight: bolder;
 	color: black;
@@ -128,7 +127,7 @@ body{
 .text-link2{
 	color: #1445ab;
 	text-decoration: none;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
 	display: block;
 }
@@ -147,7 +146,7 @@ body{
 .text-link3{
 	color: #1445ab;
 	text-decoration: none;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	margin-bottom: 15px;
 	display: block;
@@ -161,8 +160,7 @@ body{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: bold;
+	font-family: 'PT Sans', sans-serif;
 	font-size: 17px;
 }
 
@@ -175,7 +173,7 @@ body{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
 }
 
@@ -203,8 +201,7 @@ body{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
-	font-weight: bold;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 }
 
 .link-text3:hover{
@@ -212,7 +209,7 @@ body{
 }
 
 .main-news{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	margin-bottom: 10px;
 	margin-top: 30px;
@@ -228,7 +225,7 @@ body{
 
 .date_time{
 	color: #9c9c9c;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	font-size: 13px;
 }
@@ -242,7 +239,7 @@ body{
 .date_time2{
 	width: 47px;
 	color: #96a3b0;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	float: left;
 	padding-top: 3px;
@@ -273,7 +270,7 @@ body{
 }
 
 .news{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
 
@@ -386,7 +383,7 @@ body{
 }
 
 .zago_main3{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 }
 
@@ -586,7 +583,7 @@ body{
 .footer-text{
 	color: white;
 	padding-top: 17px;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
 }
 
