@@ -19,6 +19,9 @@ class ArticleAdmin(admin.ModelAdmin):
     fields = ('title', 'text', 'picture', 'created_at', 'updated_at', 'main_article', 'center_article', 'right_panel_article', 'margin_article_text', 'text_article',  'pagination_article', 'pagination_picture_article', 'heading', 'slug')
     readonly_fields = ('created_at', 'updated_at')
 
+
+
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(HeadingArticle)
 admin.site.register(Carousel)

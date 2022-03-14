@@ -87,13 +87,19 @@
 </div>
 
 <!-- 
-  <div class="container">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        {% for object in obj %}
-          <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-          <img src="{{ object.picture.url }}" class="d-block w-100" alt="...">
-          <h1 class="carousel_text"style="position: absolute;top: 690px;z-index: 3;color: white;padding-left:30px;padding-right:30px;padding-bottom:30px;">{{ object.title }}</h1>
+<div class="container">
+  <div id="gallery" class="carousel slide carousel-fade" data-ride="carousel" data-aos="fade-up" data-aos-delay="300">
+    <ul class="carousel-indicators" >
+      <li data-target="#gallery" data-slide-to="0" class="active"></li>
+      <li data-target="#gallery" data-slide-to="1"></li>
+      <li data-target="#gallery" data-slide-to="2"></li>
+    </ul>
+
+    <div class="carousel-inner">
+          {% for object in obj %}
+        <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}" data-interval="100">
+        <img src="{{ object.picture.url }}" class="d-block w-100" alt="...">
+        <h1 class="carousel_text"style="position: absolute;top: 690px;z-index: 3;color: white;padding-left:30px;padding-right:30px;padding-bottom:30px;">{{ object.title }}</h1>-
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -109,6 +115,31 @@
   </div>
   </div>
 -->
+<div class="container">
+  <div id="gallery" class="carousel slide" data-ride="carousel">
+
+    <ul class="carousel-indicators" >
+      <li data-target="#gallery" data-slide-to="0" class="active"></li>
+      <li data-target="#gallery" data-slide-to="1"></li>
+      <li data-target="#gallery" data-slide-to="2"></li>
+    </ul>
+
+    <div class="carousel-inner">
+        {% for img in obj %}  
+      <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}" data-interval="5000">
+
+        <img src="{{img.picture.url}}" class="d-block  w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block rounded position-absolute bg-custom">
+            <h5>{{img.title}}</h5>
+          </div>
+      </div>
+      {% endfor %}  
+</div>
+</div>
+
+
+
+
 
 
 
