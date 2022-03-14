@@ -86,35 +86,6 @@
   </div>
 </div>
 
-<!-- 
-<div class="container">
-  <div id="gallery" class="carousel slide carousel-fade" data-ride="carousel" data-aos="fade-up" data-aos-delay="300">
-    <ul class="carousel-indicators" >
-      <li data-target="#gallery" data-slide-to="0" class="active"></li>
-      <li data-target="#gallery" data-slide-to="1"></li>
-      <li data-target="#gallery" data-slide-to="2"></li>
-    </ul>
-
-    <div class="carousel-inner">
-          {% for object in obj %}
-        <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}" data-interval="100">
-        <img src="{{ object.picture.url }}" class="d-block w-100" alt="...">
-        <h1 class="carousel_text"style="position: absolute;top: 690px;z-index: 3;color: white;padding-left:30px;padding-right:30px;padding-bottom:30px;">{{ object.title }}</h1>-
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    {% endfor %}
-  </div>
-  </div>
--->
 <div class="container">
   <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
 
@@ -202,6 +173,26 @@
   </div>
 </div>
 
+
+  <script>
+    $('.carousel').on('touchstart', function(event){
+      const xClick = event.originalEvent.touches[0].pageX;
+      $(this).one('touchmove', function(event){
+          const xMove = event.originalEvent.touches[0].pageX;
+          const sensitivityInPx = 5;
+  
+          if( Math.floor(xClick - xMove) > sensitivityInPx ){
+              $(this).carousel('next');
+          }
+          else if( Math.floor(xClick - xMove) < -sensitivityInPx ){
+              $(this).carousel('prev');
+          }
+      });
+      $(this).on('touchend', function(){
+          $(this).off('touchmove');
+      });
+  });
+  </script>
 
 
   <!-- Optional Javascript -->
