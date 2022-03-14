@@ -116,24 +116,27 @@
   </div>
 -->
 <div class="container">
-  <div id="gallery" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
 
-    <ul class="carousel-indicators" >
-      <li data-target="#gallery" data-slide-to="0" class="active"></li>
-      <li data-target="#gallery" data-slide-to="1"></li>
-      <li data-target="#gallery" data-slide-to="2"></li>
-    </ul>
 
     <div class="carousel-inner">
         {% for img in obj %}  
-      <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}" data-interval="5000">
+      <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
 
         <img src="{{img.picture.url}}" class="d-block  w-100" alt="...">
         <div class="carousel-caption d-none d-md-block rounded position-absolute bg-custom">
             <h5>{{img.title}}</h5>
           </div>
       </div>
-      {% endfor %}  
+      {% endfor %}
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>  
 </div>
 </div>
 
