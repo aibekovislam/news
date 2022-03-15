@@ -87,14 +87,9 @@
 </div>
 
 
-<div class="carousel_block" style="width: 100%; height: auto; background-color: #20252a;">
-  <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
-    <div class="container p-5">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
+<div class="container">
+  <div class="carousel_block" style="width: 100%; height: auto; background-color: #20252a;">
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -107,13 +102,17 @@
           {% for img in obj %}  
         <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
           <div class="row">
-              <img src="{{img.picture.url}}" class="d-block  w-100 img-adaptive2" style="width: 100%;
+            <div class="test">
+              <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
               height: auto;
               border-radius: 4px;" alt="...">
               <!--<div class="carousel-caption d-none d-md-block rounded position-absolute bg-custom">
                   <h5>{{img.title}}</h5>
                 </div>-->
+            </div>
+            <div class="test2 pb-3">
               <h1 class="text-white text-center">{{ img.title }}</h1>
+            </div>
           </div>
         </div>
         {% endfor %}
