@@ -49,23 +49,25 @@
     <div class="col-md-3 mt-4">
       {% for article in articles %}
         {% if article.center_article %}
-          <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
-          <!--<a class="text-link2">{{ article.heading }}</a>-->
-          <h1 class="news_main"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+            <img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
+            <!--<a class="text-link2">{{ article.heading }}</a>-->
+            <h1 class="news_main"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
         {% endif %}
       {% endfor %}
-      {% for article in articles %}
-        {% if article.margin_article_text %}
-          <hr>
-          <h1 class="news_main"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
-        {% endif %}
-      {% endfor %}
+      <div class="test">
+        {% for article in articles %}
+          {% if article.margin_article_text %}
+            <h1 class="news_main pt-3 ps-2 pe-2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+            <div class="date_time3 ps-2 pe-2">{{ article.created_at|date:"H:i" }}</div>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
     <div class="col-md-4 mt-4">
       {% for article in articles %}
         {% if article.main_article %}
-            <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
-            <h1 class="zago_main0"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+          <img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
+          <h1 class="zago_main0"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
         {% endif %}
       {% endfor %}
       <div class="ads_block7 mt-7">
@@ -89,6 +91,11 @@
 <div class="container mt-7">
   <div class="carousel_block" style="width: 100%; height: auto; background-color: #20252a;">
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -101,17 +108,15 @@
           {% for img in obj %}  
         <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
           <div class="row">
-            <div class="test">
               <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
               height: auto;
               border-radius: 4px;" alt="...">
               <!--<div class="carousel-caption d-none d-md-block rounded position-absolute bg-custom">
                   <h5>{{img.title}}</h5>
                 </div>-->
-            </div>
-            <div class="test2 pb-3">
-              <h1 class="text-white text-center">{{ img.title }}</h1>
-            </div>
+          </div>
+          <div class="django">
+            <h1 class="xxl text-center pb-5">{{ img.title }}</h1>
           </div>
         </div>
         {% endfor %}

@@ -11,6 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 body{
 	background-color: #e8e8e8;
@@ -19,7 +20,7 @@ body{
 
 
 .logo{
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 	font-size: 26px;
 	text-decoration: none;
 	color: white;
@@ -97,9 +98,6 @@ body{
 	font-size: 17px;
 }
 
-.img-fluid{
-	border-radius: 4px;
-}
 
 .block_news{
 	width: 100%;
@@ -132,6 +130,9 @@ body{
 	display: block;
 }
 
+.img-fluid{
+	border-radius: 4px;
+}
 
 .img-m{
 	margin-bottom: 5px;
@@ -224,6 +225,14 @@ body{
 }
 
 .date_time{
+	color: #9c9c9c;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bolder;
+	font-size: 13px;
+}
+
+
+.date_time3{
 	color: #9c9c9c;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
@@ -625,7 +634,11 @@ body{
 }
 
 .test{
-	position: relative;
+	background-color: white;
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+	padding-bottom: 17px;
 }
 
 .test2{
@@ -669,10 +682,18 @@ body{
 	font-family: 'Lato', sans-serif;
 }
 
+.django{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(to bottom, rgba(41, 41, 41, 0) 0%, rgba(41, 41, 41, 0.5) 30%, #292929 80%);
+}
 
 
-
-
+.xxl{
+	color: white;
+}
 
 
 
