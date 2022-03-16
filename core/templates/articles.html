@@ -130,27 +130,23 @@
 
 
 
-
-
-
-
-
-
 <div class="container">
   <h2 class="mt-7 news">Новости</h2>
   <hr class="mb-4">
   <div class="row">
-    <div class="col-md-8">
-      {% for article in articles %}
-        {% if article.text_article %}
-            {% if not article.right_panel_article %}
-              <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
-              <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></div>
-              <hr >
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-    </div>
+      <div class="col-md-8">
+        <div class="black_block_news2">
+          {% for article in articles %}
+            {% if article.text_article %}
+                {% if not article.right_panel_article %}
+                  <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
+                  <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></div>
+                  <hr >
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+        </div>
+      </div>
     <div class="col-md-4">
       {% for article in articles %}
           {% if not article.text_article %}

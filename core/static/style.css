@@ -713,3 +713,14 @@ position: absolute;
 
 
 
+.black_block_news2{
+	background-color: #ffffff;
+	border-radius: 13px;
+	max-width: 100%;
+	color: black;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 25px;
+	padding-top: 30px;
+	height: auto;
+}
