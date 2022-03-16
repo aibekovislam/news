@@ -12,6 +12,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 body{
 	background-color: #e8e8e8;
@@ -161,8 +162,9 @@ body{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Lora', serif;
 	font-size: 17px;
+	font-weight: normal;
 }
 
 .link-text2:hover{
@@ -202,7 +204,7 @@ body{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Lora', serif;
 }
 
 .link-text3:hover{
@@ -693,6 +695,7 @@ body{
 
 .xxl{
 	color: white;
+	font-family: 'Lora', serif;
 }
 
 
