@@ -260,7 +260,7 @@ body{
 
 
 .carousel-block{
-	background-color: #20252a;
+	background-color: white;
 	height: 470px;
 	border-radius: 15px;
 }
@@ -694,7 +694,7 @@ body{
 
 
 .xxl{
-	color: white;
+	color: black;
 	font-family: 'Lora', serif;
 }
 
