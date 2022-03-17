@@ -69,9 +69,11 @@ def HandleNotFound(request, exception):
 def article_page(request, article_slug):
     article = get_object_or_404(Article, slug=article_slug)
     articles = Article.objects.all()
+    obj = Carousel.objects.all()
     articles = Article.objects.order_by('-created_at')
     heading = HeadingArticle.objects.all()
     context = {
+        "obj": obj,
         "article": article,
         "articles": articles,
         "heading": heading
