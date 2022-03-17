@@ -49,7 +49,9 @@
     <div class="col-md-3 mt-4">
       {% for article in articles %}
         {% if article.center_article %}
+          <div class="scale">
             <img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
+          </div>
             <!--<a class="text-link2">{{ article.heading }}</a>-->
             <h1 class="news_main"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
         {% endif %}
@@ -66,7 +68,9 @@
     <div class="col-md-4 mt-4">
       {% for article in articles %}
         {% if article.main_article %}
-          <img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
+          <div class="scale">
+            <img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
+          </div>
           <h1 class="zago_main0"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
         {% endif %}
       {% endfor %}
@@ -177,7 +181,9 @@
                             {% if not article.pagination_picture_article %}
                               <div class="d-flexw">
                                 <div class="mb-2 mr-5" style="width: 18rem;">
-                                <img src="{{ article.picture.url }}" class="img-adaptive mr-7 mb-3" alt="...">
+                                <div class="scale">
+                                  <img src="{{ article.picture.url }}" class="img-adaptive mr-7 mb-3" alt="...">
+                                </div>
                                 <h1 class="revolut mt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
                                 </div>
                               </div>
