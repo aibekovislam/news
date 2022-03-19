@@ -118,7 +118,7 @@ class HeadingArticle(models.Model):
 class Carousel(models.Model):
     picture = models.ImageField(upload_to='carousel_image')
     title = models.CharField(max_length=150)
-    text = models.TextField()    
+    text = models.TextField()
     
     class Meta:
         verbose_name = "Карусель"

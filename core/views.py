@@ -80,6 +80,19 @@ def article_page(request, article_slug):
     }
     return render(request, "article.html", context=context)
 
+
+def carousel_page(request, id):
+    carousel = get_object_or_404(Carousel, id=id)
+    articles = Article.objects.all()
+    articles = Article.objects.order_by('-created_at')
+    heading = HeadingArticle.objects.all()
+    context = {
+        "carousel": carousel,
+        "articles": articles,
+        "heading": heading
+    }
+    return render(request, "carousel.html", context=context)
+
 def right_panel_article(request):
     articles = Article.objects.all()
     heading = HeadingArticle.objects.all()

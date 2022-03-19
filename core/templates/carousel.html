@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="mt-8">
+                <div class="ads_block">
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
+                  crossorigin="anonymous"></script>
+                  <!-- 1 -->
+                  <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-3568209057248105"
+                  data-ad-slot="3644569680"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+            </div>
+            <h1 class="zago_main01 mt-7">{{ carousel.title }}</h1>
+            <p class="date_time d-inline ml-5">{{ carousel.created_at|date:"H:i" }}</p>
+            {% if carousel.picture %}
+                <img class="img-custom mt-4" {% if carousel.picture %} src="{{ carousel.picture.url }}" {% endif %} alt="Article image">
+            {% endif %}
+            {% autoescape off %}
+            <p class="article_text2">{{ carousel.text|linebreaksbr }}</p>
+            {% endautoescape %}
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h2 class="mt-7 news">Последние новости</h2>
+      <hr class="mb-4">
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        {% for article in articles %}
+            {% if article.main_article %}
+                <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
+                <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
+                <p class="date_time">{{ article.created_at }}</p>
+                <hr>
+            {% endif %}
+          {% endfor %}
+      </div>
+      <div class="col-md-4 mt-2">
+        {% for article in articles %}
+          {% if article.right_panel_article %}
+            <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+            <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
+            <hr>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

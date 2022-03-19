@@ -22,6 +22,10 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 
+
+
+
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(HeadingArticle)
 admin.site.register(Carousel)
