@@ -17,6 +17,40 @@
       </script>
   </div>
 </div>
+<div class="container">
+  <div class="carousel_block" style="width: 100%; height: auto; background-color: #20252a;">
+  <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+    <div class="carousel-inner">
+        {% for img in obj %}  
+      <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+        <div class="row">
+          <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-white">
+            <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
+            height: auto;
+            border-radius: 4px;" alt="...">
+        </div>
+        <!--<div class="django">
+        </div>-->
+        <h1 class="xxl text-center pb-5">{{ img.title }}</a></h1>
+      </div>
+      {% endfor %}
+    </div>  
+  </div>
+</div>
+</div>
 
 <div class="container">
   <div class="row">

@@ -398,6 +398,21 @@ body{
 	padding-bottom: 30px;
 }
 
+@media only screen and (max-width: 600px) {
+	.img-mobile {
+	  width: 100%;
+	  height: auto;
+	  background-color: #20252a;
+	}
+  }
+
+  @media only screen and (max-width: 600px) {
+	.container {
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+  }
+
 .d-flexw{
 	display: block;
 }
@@ -456,7 +471,7 @@ body{
 
 @media only screen and (max-width: 600px) {
 	.article_text2 {
-	  font-size: 18px;
+	  font-size: 16px;
 	}
   }
 
