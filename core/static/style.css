@@ -454,6 +454,12 @@ body{
 	margin-bottom: 5px;
 }
 
+@media only screen and (max-width: 600px) {
+	.article_text2 {
+	  font-size: 18px;
+	}
+  }
+
 .ads-banner2{
 	width: 300px;
 	height: auto;
