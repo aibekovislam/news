@@ -820,7 +820,16 @@ body{
 .xxl{
 	color: white;
 	font-family: 'Lora', serif;
+	margin-bottom: 19px;
 }
+
+
+@media only screen and (max-width: 600px) {
+	.xxl {
+	  font-size: 24px;
+	  margin-bottom: 19px;
+	}
+  }
 
 
 
