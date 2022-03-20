@@ -78,27 +78,30 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-5 col-sm-12 mt-4">
-      {% for article in articles %}
-        {% if article.main_article %}
-          <div class="scale">
-            <a href="{% url 'article' article.slug %}"><img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image"></a>
-          </div>
-          <h1 class="zago_main0"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
-        {% endif %}
-      {% endfor %}
-      <div class="ads_block7 mt-7">
+    <div class="col-md-5 col-sm-12 mt-2">
+      <div class="black_block_news">
+        <h4 class="main-news">Главные новости</h4>
+        <hr class="line">
+        {% for article in articles %}
+          {% if article.right_panel_article %}
+            <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
+            <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
+            <hr>
+          {% endif %}
+        {% endfor %}
+      <div class="ads_block7">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
           crossorigin="anonymous"></script>
           <ins class="adsbygoogle"
           style="display:block"
           data-ad-client="ca-pub-3568209057248105"
-          data-ad-slot="5137614753"
+          data-ad-slot="6449507053"
           data-ad-format="auto"
           data-full-width-responsive="true"></ins>
           <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
           </script>
+      </div>
       </div>
     </div>
     <div class="col-md-3 mt-4">
@@ -120,30 +123,27 @@
         {% endfor %}
       </div>
     </div>
-    <div class="col-md-4 mt-2">
-          <div class="black_block_news">
-            <h4 class="main-news">Главные новости</h4>
-            <hr class="line">
-            {% for article in articles %}
-              {% if article.right_panel_article %}
-                <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
-                <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-                <hr>
-              {% endif %}
-            {% endfor %}
-          <div class="ads_block7">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
-              crossorigin="anonymous"></script>
-              <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-3568209057248105"
-              data-ad-slot="6449507053"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
+    <div class="col-md-4 mt-4">
+      {% for article in articles %}
+        {% if article.main_article %}
+          <div class="scale">
+            <a href="{% url 'article' article.slug %}"><img class="img-fluid img-m" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image"></a>
           </div>
+          <h1 class="zago_main0"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+        {% endif %}
+      {% endfor %}
+      <div class="ads_block7 mt-7">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
+          crossorigin="anonymous"></script>
+          <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-3568209057248105"
+          data-ad-slot="5137614753"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
       </div>
     </div>
   </div>
