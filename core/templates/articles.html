@@ -41,12 +41,12 @@
               {% for img in obj %}  
             <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
               <div class="row">
-                <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-white">
+                <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
                   <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
                   height: auto;
                   border-radius: 4px;" alt="...">
               </div>
-              <h1 class="xxl text-center mb-5">{{ img.title }}</a></h1>
+              <h1 class="xxl text-center mt-3 mb-5">{{ img.title }}</a></h1>
             </div>
             {% endfor %}
           </div>
@@ -57,7 +57,7 @@
         <hr class="line2 mb-4">
         {% for article in articles %}
           {% if article.carousel_block %}
-            <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text6">{{ article.title }}</a></div>
+            <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
             <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
           {% endif %}
         {% endfor %}

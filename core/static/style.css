@@ -219,7 +219,6 @@ body{
 .black_block{
 	width: 100%;
 	height: auto;
-	background-color: #20252a;
 }
 
 
@@ -277,7 +276,7 @@ body{
 .main-news2{
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
-	color: white;
+	color: black;
 }
 
 .line{
@@ -286,8 +285,8 @@ body{
 }
 
 .line2{
-	background-color: white;
-	border: 1px solid white;
+	background-color: black;
+	border: 1px solid black;
 }
 
 .date_time{
@@ -818,7 +817,7 @@ body{
 
 
 .xxl{
-	color: white;
+	color: black;
 	font-family: 'Lora', serif;
 	margin-bottom: 29px;
 }
