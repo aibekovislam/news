@@ -333,10 +333,11 @@ body{
 }
 
 
-.carousel-block{
-	background-color: #20252a;
+.carousel_block{
+	background-color: white;
 	height: auto;
-	border-radius: 15px;
+	width: 100%;
+	border-radius: 4px;
 }
 
 

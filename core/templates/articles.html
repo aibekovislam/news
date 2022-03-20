@@ -23,45 +23,49 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <div id="carouselExampleControlsNoTouching" class="carousel slide pb-3 pt-3" data-bs-touch="false" data-bs-interval="false">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>  
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-          <div class="carousel-inner">
-              {% for img in obj %}  
-            <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-              <div class="row">
-                <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
-                  <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
-                  height: auto;
-                  border-radius: 4px;" alt="...">
+        <div class="carousel_block">
+          <div id="carouselExampleControlsNoTouching" class="carousel slide pb-3" data-bs-touch="false" data-bs-interval="false">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>  
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+            <div class="carousel-inner">
+                {% for img in obj %}  
+              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                <div class="row">
+                  <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
+                    <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
+                    height: auto;
+                    border-radius: 4px;" alt="...">
+                </div>
+                <h1 class="xxl text-center mt-3">{{ img.title }}</a></h1>
               </div>
-              <h1 class="xxl text-center mt-3 mb-5">{{ img.title }}</a></h1>
+              {% endfor %}
             </div>
-            {% endfor %}
           </div>
         </div>
       </div>
       <div class="col-md-3 pt-4">
-        <h4 class="main-news2">Новости дня</h4>
-        <hr class="line2 mb-4">
-        {% for article in articles %}
-          {% if article.carousel_block %}
-            <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-            <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
-          {% endif %}
-        {% endfor %}
+        <div class="carousel_block pt-3 pb-3 ps-3 pe-3">
+          <h4 class="main-news2">Новости дня</h4>
+          <hr class="line2 mb-4">
+          {% for article in articles %}
+            {% if article.carousel_block %}
+              <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
+              <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
+            {% endif %}
+          {% endfor %}
       </div>
+    </div>
     </div>
     </div>
   </div>
