@@ -22,8 +22,8 @@
 <div class="black_block mt-7 pt-3 pb-3">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+      <div class="col-md-8">
+        <div id="carouselExampleControlsNoTouching" class="carousel slide pb-3 pt-3" data-bs-touch="false" data-bs-interval="false">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -54,7 +54,7 @@
           </div>  
         </div>
       </div>
-      <div class="col-md-6 pt-4">
+      <div class="col-md-4 pt-4">
         <h4 class="main-news2">Новости дня</h4>
         <hr class="line2 mb-4">
         {% for article in articles %}
@@ -68,6 +68,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 
 
 <div class="container">
@@ -205,6 +209,9 @@
 
 
 
+
+
+
 <div class="container">
   <h2 class="mt-7 news">Новости</h2>
   <hr class="mb-4">
@@ -283,6 +290,22 @@
       $(this).on('touchend', function(){
           $(this).off('touchmove');
       });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', () => { // структура документа загружена и готова к взаимодействию
+
+    let cards = document.querySelectorAll('.card'); // получаем все карточки
+    cards.forEach(card => { // для каждой карточки
+      card.addEventListener('mousemove', e => { // добавляем событие передвижения курсора
+        let rect = e.target.getBoundingClientRect(); // определяем координаты курсора
+        let x = e.clientX - rect.left; // вычисляем координату x
+        let y = e.clientY - rect.top; // вычисляем координату y
+        card.style.setProperty('--x', x + 'px'); // назначаем значение CSS переменной --x
+        card.style.setProperty('--y', y + 'px'); // назначаем значение CSS переменной --y
+      });
+    })
+  
   });
   </script>
 
