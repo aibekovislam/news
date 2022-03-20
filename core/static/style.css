@@ -267,7 +267,6 @@ body{
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bolder;
 	margin-bottom: 10px;
-	margin-top: 30px;
 	display: block;
 	padding-top: 30px;
 	padding-right: 25px;
@@ -287,6 +286,10 @@ body{
 .line2{
 	background-color: black;
 	border: 1px solid black;
+}
+.line3{
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 .date_time{
@@ -713,7 +716,7 @@ body{
 
 .black_block_news{
 	background-color: #ffffff;
-	border-radius: 13px;
+	border-radius: 7px;
 	max-width: 650px;
 	color: black;
 	padding-left: 25px;
@@ -777,6 +780,8 @@ body{
 
 
 .scale {
+	background-color: white;
+	padding-bottom: 10px;
     display: inline-block; /* Строчно-блочный элемент */
     overflow: hidden; /* Скрываем всё за контуром */
    }
