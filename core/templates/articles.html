@@ -243,9 +243,9 @@
                               <div class="d-flexw">
                                 <div class="mb-2 mr-5" style="width: 18rem;">
                                 <div class="scale">
-                                  <a href="{% url 'article' article.slug %}"><img src="{{ article.picture.url }}" class="img-adaptive mr-7 mb-3" alt="..."></a>
+                                  <a href="{% url 'article' article.slug %}"><img src="{{ article.picture.url }}" class="img-adaptive mr-7" alt="..."></a>
+                                  <h1 class="revolut ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
                                 </div>
-                                <h1 class="revolut mt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
                                 </div>
                               </div>
                             {% endif %}
