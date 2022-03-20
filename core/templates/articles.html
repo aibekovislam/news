@@ -120,7 +120,6 @@
           {% if article.margin_article_text %}
             <h1 class="news_main pt-3 ps-2 pe-2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
             <div class="date_time3 ps-2 pe-2">{{ article.created_at|date:"H:i" }}</div>
-            <hr class="ps-2 pe-2">
           {% endif %}
         {% endfor %}
       </div>
