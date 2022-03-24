@@ -16,7 +16,7 @@ def articles(request):
     articles = Article.objects.order_by('-created_at')
     obj = Carousel.objects.all()
     heading = HeadingArticle.objects.all()
-    paginator = Paginator(articles, per_page=80)
+    paginator = Paginator(articles, per_page=100)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     context = {
@@ -103,4 +103,7 @@ def heading_page(request, heading_id):
     article = Article.objects.filter(heading_id=heading_id)
     heading = HeadingArticle.objects.all()
     category = HeadingArticle.objects.get(pk=heading_id)
-    return render(request, "headings_page.html", {"article": article, "heading": heading, "category": category})
+    paginator = Paginator(article, per_page=180)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+    return render(request, "headings_page.html", {"article": page_obj.object_list, "paginator": paginator, "page_number": int(page_number), "heading": heading, "category": category})

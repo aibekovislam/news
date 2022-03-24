@@ -23,7 +23,7 @@
             </div>
             <h1 class="zago_main01 mt-7">{{ article.title }}</h1>
             <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
-            <p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i" }}</p>
+            <p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
             {% if article.picture %}
               <div class="img-mobile">
                 <img class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
