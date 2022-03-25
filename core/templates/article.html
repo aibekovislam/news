@@ -19,7 +19,7 @@
     </div>
 </div>
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
           <div class="black_block_news2 mt-5">
             <h1 class="zago_main01">{{ article.title }}</h1>
             <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
@@ -34,19 +34,6 @@
             {% endautoescape %}
             </div>
         </div>
-        <div class="col-md-3">
-          <div class="black_block_news mt-5">
-            <h4 class="main-news">Главные новости</h4>
-            <hr class="line">
-            {% for article in articles %}
-              {% if article.article_page_main %}
-                <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
-                <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-                <hr>
-              {% endif %}
-            {% endfor %}
-        </div>
-    </div>
 </div>
 </div>
 
