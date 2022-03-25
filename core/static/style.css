@@ -175,7 +175,7 @@ body{
 	color: black;
 	transition-duration: 0.3s;
 	font-family: 'Lora', serif;
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: normal;
 }
 
@@ -257,6 +257,7 @@ body{
 	color: black;
 	transition-duration: 0.3s;
 	font-family: 'Lora', serif;
+	font-size: 16px;
 }
 
 .link-text3:hover{
@@ -838,6 +839,7 @@ body{
 	color: black;
 	font-family: 'Lora', serif;
 	margin-bottom: 29px;
+	font-size: 30px;
 }
 
 
