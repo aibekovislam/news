@@ -51,9 +51,45 @@
 </div>
 </div>
 
+<div class="black_block mt-7 pt-3 pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="carousel_block">
+          <div id="carouselExampleControlsNoTouching" class="carousel slide carousel-dark pb-3" data-bs-touch="false" data-bs-interval="false">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>  
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+            <div class="carousel-inner">
+                {% for img in obj %}  
+              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                <div class="row">
+                  <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
+                    <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
+                    height: auto;
+                    border-radius: 4px;" alt="...">
+                </div>
+                <h1 class="xxl text-center pt-3">{{ img.title }}</a></h1>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <h2 class="mt-7 news">Последние новости</h2>
       <hr class="mb-4">
     </div>
@@ -64,7 +100,7 @@
 
 <div class="container">
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-6">
         {% for article in articles %}
             {% if article.main_article %}
                 <img class="img-fluid img-m2" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="...">
@@ -74,7 +110,7 @@
             {% endif %}
           {% endfor %}
       </div>
-      <div class="col-md-5 mt-2">
+      <div class="col-md-6 mt-2">
         {% for article in articles %}
           {% if article.right_panel_article %}
             <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
@@ -83,8 +119,44 @@
           {% endif %}
         {% endfor %}
       </div>
-      <div class="col-md-2"></div>
     </div>
   </div>
 </div>
+
+
+<script>
+  $('.carousel').on('touchstart', function(event){
+    const xClick = event.originalEvent.touches[0].pageX;
+    $(this).one('touchmove', function(event){
+        const xMove = event.originalEvent.touches[0].pageX;
+        const sensitivityInPx = 5;
+
+        if( Math.floor(xClick - xMove) > sensitivityInPx ){
+            $(this).carousel('next');
+        }
+        else if( Math.floor(xClick - xMove) < -sensitivityInPx ){
+            $(this).carousel('prev');
+        }
+    });
+    $(this).on('touchend', function(){
+        $(this).off('touchmove');
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => { // структура документа загружена и готова к взаимодействию
+
+  let cards = document.querySelectorAll('.card'); // получаем все карточки
+  cards.forEach(card => { // для каждой карточки
+    card.addEventListener('mousemove', e => { // добавляем событие передвижения курсора
+      let rect = e.target.getBoundingClientRect(); // определяем координаты курсора
+      let x = e.clientX - rect.left; // вычисляем координату x
+      let y = e.clientY - rect.top; // вычисляем координату y
+      card.style.setProperty('--x', x + 'px'); // назначаем значение CSS переменной --x
+      card.style.setProperty('--y', y + 'px'); // назначаем значение CSS переменной --y
+    });
+  })
+
+});
+</script>
 {% endblock %}
