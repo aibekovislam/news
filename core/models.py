@@ -47,9 +47,11 @@ class Article(models.Model):
 
     center_article = models.BooleanField(default=False)
 
-    carousel_block = models.BooleanField(default=False, verbose_name=_("Новости в чёрном блоке"))
+    carousel_block = models.BooleanField(default=False, verbose_name=_("Новости дня"))
 
     right_panel_article = models.BooleanField(default=False, verbose_name=_("Главные новости"))
+
+    article_page_main = models.BooleanField(default=False, verbose_name=_("Новости внутри статей"))
 
     pagination_article = models.BooleanField(default=False, verbose_name=_("Архивные"))
     
@@ -125,6 +127,7 @@ class Carousel(models.Model):
 
     def __str__(self):
         return self.title
+
 
 
 

@@ -35,17 +35,16 @@
             </div>
         </div>
         <div class="col-md-3">
-          <div class="carousel_block2 mt-5">
-            <h4 class="main-news2">Новости дня</h4>
-            <hr class="line2 mb-4">
+          <div class="black_block_news mt-5">
+            <h4 class="main-news">Главные новости</h4>
+            <hr class="line">
             {% for article in articles %}
-              {% if article.carousel_block %}
-                <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-                <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
+              {% if article.article_page_main %}
+                <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
+                <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
                 <hr>
               {% endif %}
             {% endfor %}
-        </div>
         </div>
     </div>
 </div>
@@ -54,7 +53,7 @@
 <div class="black_block mt-7 pt-3 pb-3">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-9">
         <div class="carousel_block">
           <div id="carouselExampleControlsNoTouching" class="carousel slide carousel-dark pb-3" data-bs-touch="false" data-bs-interval="false">
             <div class="carousel-indicators">
@@ -86,16 +85,22 @@
           </div>
         </div>
       </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2 class="mt-7 news">Последние новости</h2>
-      <hr class="mb-4">
+      <div class="col-md-3">
+        <div class="carousel_block2">
+          <h4 class="main-news2">Новости дня</h4>
+          <hr class="line2 mb-4">
+          {% for article in articles %}
+            {% if article.carousel_block %}
+              <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
+              <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
+              <hr>
+            {% endif %}
+          {% endfor %}
+      </div>
     </div>
-    <div class="col-md-2">
     </div>
-    <div class="col-md-2"></div>
+    </div>
+  </div>
 </div>
 
 <div class="container">

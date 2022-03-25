@@ -107,3 +107,5 @@ def heading_page(request, heading_id):
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     return render(request, "headings_page.html", {"article": page_obj.object_list, "paginator": paginator, "page_number": int(page_number), "heading": heading, "category": category})
+
+
