@@ -300,6 +300,13 @@ body{
 	font-size: 13px;
 }
 
+.date_time5{
+	color: #9c9c9c;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+}
+
 
 .date_time3{
 	color: #9c9c9c;
@@ -308,6 +315,18 @@ body{
 	font-size: 13px;
 }
 
+.block_page2{
+	width: 100%;
+	height: auto;
+	background-color: white;
+}
+
+
+.all-news{
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 900;
+	text-align: center;
+}
 
 .kg{
 	color: #4983ff;
@@ -376,11 +395,26 @@ body{
 	font-weight: bolder;
 }
 
+.page_2_title{
+	font-size: 17px;
+	font-weight: 400;
+}
+
+.page_2_title2{
+	font-size: 11px;
+	font-weight: 400;
+}
+
 .vertical_ads{
 	width: 100%;
 	height: 700px;
 	background-color: #7d7d7d;
 }
+
+.button-wrapper{
+	display: flex;	
+	justify-content: center;	
+  }
 
 .ads_block{
 	width: 100%;

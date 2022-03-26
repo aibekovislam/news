@@ -35,7 +35,7 @@ def articles(request):
 def article_page_2(request):
     articles = Article.objects.all()
     heading = HeadingArticle.objects.all()
-    paginator = Paginator(articles, per_page=40)
+    paginator = Paginator(articles, per_page=17)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     context = {
@@ -103,9 +103,6 @@ def heading_page(request, heading_id):
     article = Article.objects.filter(heading_id=heading_id)
     heading = HeadingArticle.objects.all()
     category = HeadingArticle.objects.get(pk=heading_id)
-    paginator = Paginator(article, per_page=180)
-    page_number = request.GET.get('page', 1)
-    page_obj = paginator.get_page(page_number)
-    return render(request, "headings_page.html", {"article": page_obj.object_list, "paginator": paginator, "page_number": int(page_number), "heading": heading, "category": category})
+    return render(request, "headings_page.html", {"article": article, "heading": heading, "category": category})
 
 
