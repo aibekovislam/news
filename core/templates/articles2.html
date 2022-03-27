@@ -32,7 +32,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-7">
               {% for article in articles %}
-                <h1 class="page_2_title">{{ article.title }}</h1>
+                <h1 class="page_2_title"><a href="{% url 'article' article.slug %}" class="text-decoration-none text-dark">{{ article.title }}</a></h1>
                 <div class="date_time5 d-inline me-1">{{ article.created_at }}</div>
                 <h6 class="page_2_title2 d-inline">{{ article.heading }}</h6>
                 <hr>
