@@ -24,11 +24,12 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
-                        <h3 class="zago_main3 mt-7 mb-4 text-md-start">Лента новостей</h3>
+                        <h3 class="zago_main3 mt-7 mb-4 text-md-center">{{ category.title }}</h3>
                         <hr class="mb-5">
                         {% for articles in article %}
-                        <h1 class="zago_main02"><a href="{% url 'article' articles.slug %}" class="link-text4">{{ articles.title }}</a></h1>
-                        <p class="date_time mr-5">{{ articles.created_at|date:"Y-m-d H:i" }}</p>
+                        <h1 class="zago_main02"><a href="{% url 'article' articles.slug %}" class="link-text3">{{ articles.title }}</a></h1>
+                        <p class="date_time5 me-1 d-inline">{{ articles.created_at|date:"Y-m-d H:i" }}</p>
+                        <h6 class="page_2_title2 d-inline">{{ articles.heading }}</h6>
                         <hr class="mt-4">
                         {% endfor %}
                     </div>
