@@ -22,9 +22,8 @@
                 </div>
             </div>
             <h1 class="zago_main01 mt-7">{{ carousel.title }}</h1>
-            <p class="date_time d-inline ml-5">{{ carousel.created_at|date:"H:i" }}</p>
             {% if carousel.picture %}
-                <img class="img-custom mt-4" {% if carousel.picture %} src="{{ carousel.picture.url }}" {% endif %} alt="Article image">
+                <img class="img-custom mt-2" {% if carousel.picture %} src="{{ carousel.picture.url }}" {% endif %} alt="Article image">
             {% endif %}
             {% autoescape off %}
             <p class="article_text2">{{ carousel.text|linebreaksbr }}</p>
