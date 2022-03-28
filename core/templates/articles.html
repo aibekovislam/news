@@ -60,9 +60,11 @@
           <hr class="line2 mb-4">
           {% for article in articles %}
             {% if article.carousel_block %}
-              <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-              <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
-              <hr>
+              {% if not article.pagination_article %}
+                <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
+                <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
+                <hr>
+              {% endif %}
             {% endif %}
           {% endfor %}
           <div class="button-wrapper">
@@ -104,9 +106,11 @@
         <hr class="line">
         {% for article in articles %}
           {% if article.right_panel_article %}
-            <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
-            <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-            <hr>
+            {% if not article.pagination_article %}
+              <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
+              <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
+              <hr>
+            {% endif %}
           {% endif %}
         {% endfor %}
         <div class="button-wrapper mb-3">
@@ -130,18 +134,22 @@
     <div class="col-md-3 mt-4">
       {% for article in articles %}
         {% if article.center_article %}
-          <div class="scale mb-2">
-            <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
-            <!--<a class="text-link2">{{ article.heading }}</a>-->
-            <h1 class="news_main ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
-          </div>
+          {% if not article.pagination_article %}
+            <div class="scale mb-2">
+              <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
+              <!--<a class="text-link2">{{ article.heading }}</a>-->
+              <h1 class="news_main ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+            </div>
+          {% endif %}
         {% endif %}
       {% endfor %}
       <div class="test">
         {% for article in articles %}
           {% if article.margin_article_text %}
-            <h1 class="news_main pt-3 ps-2 pe-2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
-            <div class="date_time3 ps-2 pe-2">{{ article.created_at|date:"H:i" }}</div>
+            {% if not article.pagination_article %}
+              <h1 class="news_main pt-3 ps-2 pe-2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+              <div class="date_time3 ps-2 pe-2">{{ article.created_at|date:"H:i" }}</div>
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>
@@ -149,10 +157,12 @@
     <div class="col-md-4 mt-4">
       {% for article in articles %}
         {% if article.main_article %}
-          <div class="scale mb-2">
-            <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image"></a>
-            <h1 class="zago_main0 ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
-          </div>
+          {% if not article.pagination_article %}
+            <div class="scale mb-2">
+              <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image"></a>
+              <h1 class="zago_main0 ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+            </div>
+          {% endif %}
         {% endif %}
       {% endfor %}
       <div class="ads_block7">
@@ -243,13 +253,15 @@
         <div class="black_block_news2">
           {% for article in articles %}
             {% if article.text_article %}
+              {% if not article.pagination_article %}
                 {% if not article.right_panel_article %}
                   <div class="date_time2">{{ article.created_at|date:"H:i" }}</div>
                   <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></div>
                   <hr >
                 {% endif %}
               {% endif %}
-            {% endfor %}
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     <div class="col-md-4">

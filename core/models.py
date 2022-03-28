@@ -51,8 +51,6 @@ class Article(models.Model):
 
     right_panel_article = models.BooleanField(default=False, verbose_name=_("Главные новости"))
 
-    article_page_main = models.BooleanField(default=False, verbose_name=_("Новости внутри статей"))
-
     pagination_article = models.BooleanField(default=False, verbose_name=_("Архивные"))
     
     updated_at = models.DateTimeField(auto_now=True)
