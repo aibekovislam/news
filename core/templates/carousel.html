@@ -21,9 +21,7 @@
   <div class="row">
       <div class="col-md-9">
         <div class="black_block_news2 mt-5">
-          <h1 class="zago_main01">{{ article.title }}</h1>
-          <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
-          <p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
+          <h1 class="zago_main01">{{ carousel.title }}</h1>
           {% if carousel.picture %}
               <img class="img-custom mt-2" {% if carousel.picture %} src="{{ carousel.picture.url }}" {% endif %} alt="Article image">
             {% endif %}
