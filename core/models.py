@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from django.shortcuts import reverse
 
 
+
 class Article(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     text = models.TextField()

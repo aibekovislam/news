@@ -11,6 +11,20 @@ def index(request):
     return HttpResponse("news")
 
 
+
+def home(request,type, article_slug):
+    if(type=='amp'):
+        article = get_object_or_404(Article, slug=article_slug)
+        articles = Article.objects.all()
+        heading = HeadingArticle.objects.all()
+        context = {
+        "articles": articles,
+        "article": article,
+        "heading": heading
+        }
+        return render(request, 'page.html', context=context)  
+
+
 def articles(request):
     articles = Article.objects.all()
     articles = Article.objects.order_by('-created_at')
