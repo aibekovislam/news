@@ -42,7 +42,9 @@ body{
     margin-top: 100px;
 }
 
-
+.mt-custom{
+	margin-top: 75px;
+}
 
 .zago_news{
     color: black;
@@ -415,6 +417,12 @@ button:active, button:focus {
 .vertical_ads{
 	width: 100%;
 	height: auto;
+}
+
+.goriz_ads{
+	width: 100%;
+	height: auto;
+	text-align: center;
 }
 
 .button-wrapper{
