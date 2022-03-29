@@ -42,12 +42,6 @@ body{
     margin-top: 100px;
 }
 
-@media only screen and (max-width: 600px) {
-	.mt-8 {
-	  margin-top: 75px;
-	}
-  }
-
 .mt-custom{
 	margin-top: 75px;
 }
