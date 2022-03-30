@@ -9,6 +9,9 @@ from django.views import generic
 from django.views.decorators.http import require_GET
 from django.http import HttpResponse
  
+
+def authorized_digital_sellers_view(request):
+    return HttpResponse('google.com, pub-3568209057248105, DIRECT, f08c47fec0942fa0') 
  
 # class based view for each post in amp template
 def amp(request, slug):
