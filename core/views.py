@@ -4,6 +4,23 @@ from django.shortcuts import HttpResponse, get_object_or_404
 from .models import *
 from django.shortcuts import render, HttpResponse, redirect
 from django.core.paginator import Paginator
+# importing models and libraries
+from django.views import generic
+from django.views.decorators.http import require_GET
+from django.http import HttpResponse
+ 
+ 
+# class based view for each post in amp template
+def amp(request, slug):
+        article = get_object_or_404(Article, slug=slug)
+        articles = Article.objects.all()
+        heading = HeadingArticle.objects.all()
+        context = {
+            "articles": articles,
+            "article": article,
+            "heading": heading
+            }
+        return render(request, 'amp.html', context=context)
 
 
 # Create your views here.
@@ -22,7 +39,7 @@ def home(request,type, article_slug):
         "article": article,
         "heading": heading
         }
-        return render(request, 'page.html', context=context)  
+        return render(request, '.amp.html', context=context)  
 
 
 def articles(request):

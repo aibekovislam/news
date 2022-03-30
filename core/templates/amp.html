@@ -1,0 +1,170 @@
+{% load ampimg %}
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ object.title }}</title>
+    <meta name="description" content="{{ article.metades}}" />
+    <meta property="og:title" content="{{ article.title }}">
+    <meta property="og:site_name" content="GeeksForGeeks">
+    <meta property="og:url" content="{% url 'article' article.slug %}">
+    <meta property="og:description" content="{{ article.metades }}">
+    <meta property="og:type" content="article">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <style amp-custom>
+    body { font-family: 'Raleway', sans-serif; }
+    footer { text-align: center;
+      height: 29px;
+      font-size: 1.2em;
+    }
+    #banner {
+    font-size: 1em;
+    width: 100%;}
+button {
+    font-size: 17px;
+    text-decoration: none;
+    border: none;
+    border-radius: 29px;}
+#amp_page { font-size: 18px; }
+.headerbar {
+  height: 45px;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #4f4f4f;
+}
+.log{
+  font-size: 25px;
+}
+.log2{
+  font-size: 17px;
+  color: grey;
+}
+.log3{
+  font-size:17px;
+  font-family: 'Source Serif Pro', serif;
+}
+.headerbar2 {
+  height: 45px;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+.site-name {
+  font-size:20px;
+  font-family: 'Montserrat', sans-serif;
+  margin: auto;
+}
+#banner {
+  margin-top: 70px;
+}
+.hamburger {
+  padding-left: 15px;
+  color: white;
+  display: inline-block;
+}
+.hamburger2{
+  padding-left: 7px;
+  display: inline-block;
+}
+.sidebar {
+  font-size: 29px;
+  padding: 60px;
+  margin: 0;
+}
+#sidebar1{
+  background: #4f4f4f;
+}
+.sidebar > li {
+  list-style: none;
+  margin-bottom:10px;
+}
+.category{
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+}
+.category:hover{
+  color: #dedede;
+}
+.sidebar li a {
+  text-decoration: none;
+  font-family: sans-serif;
+}
+.close-sidebar {
+  font-size: 1.8em;
+  padding-left: 25px;
+  color:white;
+}
+#storycontent {text-align: center; }
+.storyimages { min-width: 100%;
+margin: 0 auto; }
+   </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1, end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1, end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1, end) 0s 1 normal both;animation:-amp-start 8s steps(1, end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href="{% url 'article' article.slug %}">
+    <link rel="manifest" href="/manifest.json">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "headline": "{{ article.title }}",
+  "description": "{{ article.metades }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{% url 'article' article.slug %}"
+},
+  "author": {
+    "@type": "Person",
+    "name": "{{ article.author.user }} {{ article.author.nik }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GeeksForGeeks",
+  },
+  "datePublished": "{{ article.created_at }}"
+}
+</script>
+  </head>
+  <body>
+<header class="headerbar2">
+  <div class="site-name">KALPAK.KG</div>
+</header>
+<header class="headerbar">
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰ <div class="hamburger2">{{ article.heading }}</div></div>
+</header>
+<amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <ul class="sidebar">
+       <li><a href="{% url 'main' %}" class="btn btn-danger">Полная версия</a></li>
+      {% for headings in heading %}
+        <li><a href="{% url 'heading' headings.id %}" class="category">{{ headings.title }}</a></li>
+      {% endfor %}
+       </ul></amp-sidebar>
+<div class="container" id="banner"><h1 class="log">{{ article.title }}</h1></div>
+<div class="container mb-3"><h3 class="log2">{{ article.created_at }}</h3></div>
+<amp-img class="mb-3" width="420"
+  height="240" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="НАЗВАНИЕ ИГРЫ" width="250" height="280"></amp-img>
+<div class="container mb-3">{% autoescape off %}<h3 class="log3">{{ article.text|linebreaksbr }}</h3>{% endautoescape %}</div>
+<div class="container text-center"><p id="amp_page"><a href="{% url 'article' article.slug %}" class="btn btn-danger">Узнайте больше в полной версии</a></p></div>
+ 
+        <p id="storycontent">{{ article.content | ampimg | safe }}</p>
+ 
+    <div class="container">some content...</div>
+    <footer>© KALPAK.KG</footer>
+  </body>
+</html>
