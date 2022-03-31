@@ -174,8 +174,8 @@ margin: 0 auto; }
           "image": [
             "{{ article.picture.url }}"
           ],
-          "datePublished": "{{ article.created_at|date: 'c' }}",
-          "dateModified": "{{ article.created_at|date: 'c' }}",
+          "datePublished": "{{ article.created_at }}",
+          "dateModified": "{{ article.created_at }}",
           "author": {
             "@type": "Person",
             "name": "{{ article.author.nik }}",
