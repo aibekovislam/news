@@ -103,6 +103,7 @@ def HandleNotFound(request, exception):
 
 def article_page(request, article_slug):
     article = get_object_or_404(Article, slug=article_slug)
+    author = Author.objects.all()
     articles = Article.objects.all()
     obj = Carousel.objects.all()
     articles = Article.objects.order_by('-created_at')
@@ -111,7 +112,8 @@ def article_page(request, article_slug):
         "obj": obj,
         "article": article,
         "articles": articles,
-        "heading": heading
+        "heading": heading,
+        "author": author
     }
     return render(request, "article.html", context=context)
 
