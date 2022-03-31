@@ -15,7 +15,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_filter = ['is_active', 'updated_at', 'main_article', 'center_article', 'right_panel_article', 'text_article', 'margin_article_text', 'slug', 'pagination_article', 'carousel_block']
     search_fields = ['title', 'text']
     prepopulated_fields = {'slug': ("title",)}
-    fields = ('title', 'text', 'metades', 'picture', 'created_at', 'updated_at', 'main_article', 'center_article', 'right_panel_article', 'margin_article_text', 'text_article',  'pagination_article', 'carousel_block', 'heading', 'slug',)
+    fields = ('title', 'text', 'picture', 'created_at', 'updated_at', 'main_article', 'center_article', 'right_panel_article', 'margin_article_text', 'text_article',  'pagination_article', 'carousel_block', 'heading', 'slug', 'metades')
     readonly_fields = ('created_at', 'updated_at')
 
 
