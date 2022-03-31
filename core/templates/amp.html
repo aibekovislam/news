@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <!--<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>-->
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <style amp-custom>
@@ -94,7 +95,7 @@ button {
   margin: auto;
 }
 #banner {
-  margin-top: 70px;
+  margin-top: 30px;
 }
 .hamburger {
   padding-left: 15px;
@@ -186,6 +187,14 @@ margin: 0 auto; }
         <li><a href="{% url 'heading' headings.id %}" class="category">{{ headings.title }}</a></li>
       {% endfor %}
        </ul></amp-sidebar>
+       <amp-ad width="100vw" height="320"
+       type="adsense"
+       data-ad-client="ca-pub-3568209057248105"
+       data-ad-slot="3392667093"
+       data-auto-format="rspv"
+       data-full-width="">
+       <div overflow=""></div>
+       </amp-ad>
 <div class="container" id="banner"><h1 class="log">{{ article.title }}</h1></div>
 <div class="container mb-3"><h3 class="log2">{{ article.created_at }}</h3></div>
 <amp-img class="mb-3" width="420"
