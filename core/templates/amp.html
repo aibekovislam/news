@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    <!--<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>-->
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <style amp-custom>
     body { font-family: 'Raleway', sans-serif; }
@@ -143,13 +143,24 @@ margin: 0 auto; }
     <link rel="manifest" href="/manifest.json">
     <script type="application/ld+json">
       {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "NewsArticle",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{% url 'article' article.slug %}"
+        },
         "headline": "{{ article.title }}",
-        "image": [{% if article.picture %} "article.picture.url" {% endif %}],
-        "datePublished": "{{ article.created_at }}"
+        "image": [
+          "{{ article.picture.url }}",
+        ],
+        "datePublished": "{{ article.created_at }}",
+        "dateModified": "{{ article.created_at }}",
+        "publisher": {
+          "@type": "Organization",
+          "name": "KALPAK.KG",
+        }
       }
-    </script>
+      </script>
   </head>
   <body>
 <header class="headerbar2">
