@@ -10,7 +10,7 @@ from django.shortcuts import reverse
 class Article(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     text = models.TextField()
-    metades = CharField(max_length=255, verbose_name="КЛЮЧЕВЫЕ СЛОВА ТОЛЬКО ДЛЯ АМП ИСКЕН!")
+    metades = CharField(max_length=255,)
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL", null=True, blank=True)
     author = models.ForeignKey(
         to="Author",
