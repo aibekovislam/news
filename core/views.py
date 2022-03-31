@@ -116,6 +116,11 @@ def article_page(request, article_slug):
     return render(request, "article.html", context=context)
 
 
+def author_page(request, author_slug):
+    author = get_object_or_404(Author, slug=author_slug)
+    return render(request, "author.html", {"author": author})
+
+
 def carousel_page(request, id):
     carousel = get_object_or_404(Carousel, id=id)
     articles = Article.objects.all()

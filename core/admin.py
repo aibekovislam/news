@@ -3,7 +3,6 @@ from core.models import Article, Author, ArticleImage, Carousel, HeadingArticle
 
 # Register your models here.
 
-admin.site.register(Author)
 admin.site.register(ArticleImage)
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -22,12 +21,25 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 
+class AuthorAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Author
 
+    list_display = ('user', 'nik')
+    list_editable = ('nik',)
+    ordering = ['nik']
+    prepopulated_fields = {'slug': ("user",)}
+    list_filter = ['nik', 'slug',]
+    search_fields = ['nik',]
+
+    fields = ('nik', 'user', 'photo', 'slug',)
+    readonly_fields = ('nik',)
 
 
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(HeadingArticle)
 admin.site.register(Carousel)
+admin.site.register(Author, AuthorAdmin)
 
 # Register your models here.

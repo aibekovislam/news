@@ -162,6 +162,35 @@ margin: 0 auto; }
       }
     }
       </script>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{% url 'article' article.slug %}"
+          },
+          "headline": "{{ article.title }}",
+          "image": [
+            "{{ article.picture.url }}"
+          ],
+          "datePublished": "{{ article.created_at|date: "c" }}",
+          "dateModified": "{{ article.created_at|date: "c" }}",
+          "author": {
+            "@type": "Person",
+            "name": "{{ article.author.nik }}",
+            "url": "{% url 'author' author_slug %}"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://google.com/logo.jpg"
+            }
+          }
+        }
+        </script>
   </head>
   <body>
 <header class="headerbar2">

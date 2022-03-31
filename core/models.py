@@ -73,14 +73,11 @@ class Article(models.Model):
 
 
 class Author(models.Model):
-    user = models.OneToOneField(
-        to=User,
-        related_name="author",
-        verbose_name="Пользователь",
-        null=False,
-        blank=False,
-        on_delete=models.CASCADE
-    )
+    user = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL", null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse("author", kwargs={'author_slug': self.slug})
 
     nik = models.CharField(max_length=55)
 
