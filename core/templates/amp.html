@@ -11,7 +11,6 @@
     <meta property="og:description" content="{{ article.metades }}">
     <meta property="og:type" content="article">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
-    <link rel="canonical" href="{% url 'article' article.slug %}">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,7 +134,7 @@ margin: 0 auto; }
   },
   "publisher": {
     "@type": "Organization",
-    "name": "GeeksForGeeks",
+    "name": "KALPAK.KG",
   },
   "datePublished": "{{ article.created_at }}"
 }
@@ -159,7 +158,7 @@ margin: 0 auto; }
 <div class="container" id="banner"><h1 class="log">{{ article.title }}</h1></div>
 <div class="container mb-3"><h3 class="log2">{{ article.created_at }}</h3></div>
 <amp-img class="mb-3" width="420"
-  height="240" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="НАЗВАНИЕ ИГРЫ" width="250" height="280"></amp-img>
+  height="240" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="НАЗВАНИЕ ИГРЫ"></amp-img>
 <div class="container mb-3">{% autoescape off %}<h3 class="log3">{{ article.text|linebreaksbr }}</h3>{% endautoescape %}</div>
 <div class="container text-center"><p id="amp_page"><a href="{% url 'article' article.slug %}" class="btn btn-danger">Узнайте больше в полной версии</a></p></div>
  
