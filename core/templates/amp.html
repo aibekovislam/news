@@ -142,22 +142,14 @@ margin: 0 auto; }
     <link rel="canonical" href="{% url 'article' article.slug %}">
     <link rel="manifest" href="/manifest.json">
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Article",
-  "headline": "{{ article.title }}",
-  "description": "{{ article.metades }}",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{% url 'article' article.slug %}"
-},
-  "publisher": {
-    "@type": "Organization",
-    "name": "KALPAK.KG",
-  },
-  "datePublished": "{{ article.created_at }}"
-}
-</script>
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{{ article.title }}",
+        "image": [{% if article.picture %} "article.picture.url" {% endif %}],
+        "datePublished": "{{ article.created_at }}"
+      }
+    </script>
   </head>
   <body>
 <header class="headerbar2">
