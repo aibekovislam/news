@@ -1,183 +1,307 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="<link rel="sitemap"" type="application/xml" title="Sitemap" href="/home/aibekovislam/news/sitemap.xml">
+    <meta name="keywords" content="Кыргызстан, новости кыргызстана, киргизия, бишкек, информационное агентство, новости, новостная лента, последние новости кр, Бишкекские новости, кыргызы, киргизы, киргизский, СМИ, информационный, средняя азия, азиатский, news, новости кр, кр, новостное агентство, горячие новости, киргизский, кыргызская, новости кыргызстан, новости бишкек, новости бишкека сегодня, новости бишкек сегодня, новости кр на сегодня, новости кр, новости кр 2022, кыргызстан новости, бишкек новости, kalpak.kg, kalpak kg, калпак кг, калпаккг, kalpakkg, kalpak, kalpak, калпак, спутник новости, новости 2022"/>
+    <meta name="description" content="Главные новости дня из Бишкека, информационная лента новостей, новости Кыргызстана и СНГ, события дня и последнего часа.Новости, статьи, фотографии. ">
+    <meta name="google-site-verification" content="SuC6g-NtaPxZVOSbG0Id-3VT21tYQt32arZJ-1YD3r8" />
+    <meta name="yandex-verification" content="a9076df1404e2f63" />
+    <meta name="description" content="{{ article.metades}}" />
+    <meta property="og:title" content="{{ article.title }}">
+    <meta property="og:site_name" content="KALPAK.KG">
+    <meta property="og:url" content="{% url 'article' article.slug %}">
+    <meta property="og:description" content="{{ article.metades }}">
+    <meta property="og:type" content="article">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="amphtml" href="amp.html">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="../static/favicons/site.webmanifest" />
+    <link rel="Shortcut Icon" href="..static/favicons/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicons/favicon.ico' %}"/>
+    <link rel="shortcut icon" href="../static/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="../static/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap/sitemap.xml" />
+    <link rel="amphtml" href="https://kalpak.kg/amp/page.html">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="ISLAM">
+    <meta name="generator" content="Hugo 0.88.1">
+    <meta property="og:image"              content="../logo/kalpak.kg.png" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}?{% now "U" %}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src={% static "..static/index.js" %}></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>{{ article.title }}</title>
+    
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
+    <script src="../static/index.js"></script>
+    <style>
+          body {
+                background: #faf7f7;
+              }
+    </style>
+    
 
-{% block content %}
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<meta name="theme-color" content="#7952b3">
+
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-custom">
+      <div class="container">
+        <a class="logo" href="{% url 'main' %}">KALPAK.KG</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav linkss">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="{% url 'right_panel_articles' %}">Главные новости</a>
+            </li>
+          {% for headings in heading %}
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'heading' headings.id %}">{{ headings.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+  </nav>
   <div class="mt-custom">
-</div>
-<div class="container mt-8">
-    <div class="row">
-        <div class="col-md-9">
-          <div class="black_block_news2 mt-3">
-            <h1 class="zago_main01">{{ article.title }}</h1>
-            <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
-            <p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
-            {% if article.picture %}
-              <div class="img-mobile">
-                <img class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
-              </div>
-            {% endif %}
-            {% autoescape off %}
-            <p class="article_text2">{{ article.text|linebreaksbr }}</p>
-            {% endautoescape %}
-            </div>
-        </div>
-      <div class="col-md-3 mt-3">
-        <div class="vertical_ads">
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
-          crossorigin="anonymous"></script>
-          <!-- vn -->
-          <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-3568209057248105"
-          data-ad-slot="3392667093"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
-      </div>
   </div>
-</div>
-
-
-<div class="black_block mt-7 pt-3 pb-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <div class="carousel_block">
-          <div id="carouselExampleControlsNoTouching" class="carousel slide carousel-dark pb-3" data-bs-touch="false" data-bs-interval="false">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>  
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-            <div class="carousel-inner">
-                {% for img in obj %}  
-              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                <div class="row">
-                  <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
-                    <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
-                    height: auto;
-                    border-radius: 4px;" alt="...">
+  <div class="container mt-8">
+      <div class="row">
+          <div class="col-md-9">
+            <div class="black_block_news2 mt-3">
+              <h1 class="zago_main01">{{ article.title }}</h1>
+              <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
+              <p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
+              {% if article.picture %}
+                <div class="img-mobile">
+                  <img class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
                 </div>
-                <h1 class="xxl text-center pt-3">{{ img.title }}</a></h1>
+              {% endif %}
+              {% autoescape off %}
+              <p class="article_text2">{{ article.text|linebreaksbr }}</p>
+              {% endautoescape %}
               </div>
-              {% endfor %}
+          </div>
+        <div class="col-md-3 mt-3">
+          <div class="vertical_ads">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
+            crossorigin="anonymous"></script>
+            <!-- vn -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-3568209057248105"
+            data-ad-slot="3392667093"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="black_block mt-7 pt-3 pb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="carousel_block">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide carousel-dark pb-3" data-bs-touch="false" data-bs-interval="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>  
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+              <div class="carousel-inner">
+                  {% for img in obj %}  
+                <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                  <div class="row">
+                    <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
+                      <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
+                      height: auto;
+                      border-radius: 4px;" alt="...">
+                  </div>
+                  <h1 class="xxl text-center pt-3">{{ img.title }}</a></h1>
+                </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>
+        <div class="col-md-3">
+          <div class="carousel_block2">
+            <h4 class="main-news2">Новости дня</h4>
+            <hr class="line2 mb-4">
+            {% for article in articles %}
+              {% if article.carousel_block %}
+                <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
+                <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
+                <hr>
+              {% endif %}
+            {% endfor %}
+            <div class="button-wrapper mb-3">
+              <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
+            </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <div class="carousel_block2">
-          <h4 class="main-news2">Новости дня</h4>
-          <hr class="line2 mb-4">
-          {% for article in articles %}
-            {% if article.carousel_block %}
-              <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-              <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
-              <hr>
-            {% endif %}
-          {% endfor %}
-          <div class="button-wrapper mb-3">
-            <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="goriz_ads">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
+      crossorigin="anonymous"></script>
+      <!-- 87 -->
+      <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-3568209057248105"
+      data-ad-slot="9930155288"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12 mt-5">
+          <div class="black_block_news2">
+            {% for article in articles %}
+              {% if article.right_panel_article %}
+                <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+                <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
+                <hr>
+              {% endif %}
+            {% endfor %}
           </div>
-      </div>
-    </div>
-    </div>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="goriz_ads">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
-    crossorigin="anonymous"></script>
-    <!-- 87 -->
-    <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-3568209057248105"
-    data-ad-slot="9930155288"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-</div>
-
-<div class="container">
-    <div class="row">
-      <div class="col-md-12 mt-5">
-        <div class="black_block_news2">
-          {% for article in articles %}
-            {% if article.right_panel_article %}
-              <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
-              <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
-              <hr>
-            {% endif %}
-          {% endfor %}
         </div>
       </div>
     </div>
   </div>
-</div>
+  
+  
+  <div class="goriz_ads mt-3">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
+      crossorigin="anonymous"></script>
+      <!-- 87 -->
+      <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-3568209057248105"
+      data-ad-slot="9930155288"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  
+  <script>
+    $('.carousel').on('touchstart', function(event){
+      const xClick = event.originalEvent.touches[0].pageX;
+      $(this).one('touchmove', function(event){
+          const xMove = event.originalEvent.touches[0].pageX;
+          const sensitivityInPx = 5;
+  
+          if( Math.floor(xClick - xMove) > sensitivityInPx ){
+              $(this).carousel('next');
+          }
+          else if( Math.floor(xClick - xMove) < -sensitivityInPx ){
+              $(this).carousel('prev');
+          }
+      });
+      $(this).on('touchend', function(){
+          $(this).off('touchmove');
+      });
+  });
+  
+  
+  document.addEventListener('DOMContentLoaded', () => { // структура документа загружена и готова к взаимодействию
+  
+    let cards = document.querySelectorAll('.card'); // получаем все карточки
+    cards.forEach(card => { // для каждой карточки
+      card.addEventListener('mousemove', e => { // добавляем событие передвижения курсора
+        let rect = e.target.getBoundingClientRect(); // определяем координаты курсора
+        let x = e.clientX - rect.left; // вычисляем координату x
+        let y = e.clientY - rect.top; // вычисляем координату y
+        card.style.setProperty('--x', x + 'px'); // назначаем значение CSS переменной --x
+        card.style.setProperty('--y', y + 'px'); // назначаем значение CSS переменной --y
+      });
+    })
+  
+  });
+  </script>
+<footer class="footer-distributed mt-5">
+  <div class="container">
+  <div class="footer-left">
+  <br>
+  <br>
+  <h3>KALPAK.KG</h3>
 
+  <!--<p class="footer-text">Новости каждый день</p>-->
 
-<div class="goriz_ads mt-3">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
-    crossorigin="anonymous"></script>
-    <!-- 87 -->
-    <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-3568209057248105"
-    data-ad-slot="9930155288"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+  <p class="footer-company-name">KYRGYZSTAN © 2020</p>
   </div>
 
-<script>
-  $('.carousel').on('touchstart', function(event){
-    const xClick = event.originalEvent.touches[0].pageX;
-    $(this).one('touchmove', function(event){
-        const xMove = event.originalEvent.touches[0].pageX;
-        const sensitivityInPx = 5;
+  <div class="footer-center">
 
-        if( Math.floor(xClick - xMove) > sensitivityInPx ){
-            $(this).carousel('next');
-        }
-        else if( Math.floor(xClick - xMove) < -sensitivityInPx ){
-            $(this).carousel('prev');
-        }
-    });
-    $(this).on('touchend', function(){
-        $(this).off('touchmove');
-    });
-});
+  <div>
+      <i class="fa fa-map-marker"></i>
+      <p>Кыргызстан г.Бишкек</p>
+  </div>
 
+  <div>
+      <i class="fa fa-phone"></i>
+      <p>+996704671157</p>
+      <p>+996550558909</p>
+  </div>
 
-document.addEventListener('DOMContentLoaded', () => { // структура документа загружена и готова к взаимодействию
+  <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">sitekyrgyzstankg@gmail.com</a></p>
+  </div>
 
-  let cards = document.querySelectorAll('.card'); // получаем все карточки
-  cards.forEach(card => { // для каждой карточки
-    card.addEventListener('mousemove', e => { // добавляем событие передвижения курсора
-      let rect = e.target.getBoundingClientRect(); // определяем координаты курсора
-      let x = e.clientX - rect.left; // вычисляем координату x
-      let y = e.clientY - rect.top; // вычисляем координату y
-      card.style.setProperty('--x', x + 'px'); // назначаем значение CSS переменной --x
-      card.style.setProperty('--y', y + 'px'); // назначаем значение CSS переменной --y
-    });
-  })
+  </div>
 
-});
-</script>
-{% endblock %}
+  <div class="footer-right">
+
+  <p class="footer-company-about">
+      <span></span>
+      © Информационное агентство KALPAK.KG
+Материалы, размещенные на сайте KALPAK.KG, предназначены только для персонального пользования. Публичное распространение материалов возможно только при письменном согласии редакции.
+  </p>
+
+  </div>
+  </div>
+</footer>
+</head>
+</body>
+</html>
