@@ -14,8 +14,8 @@ def authorized_digital_sellers_view(request):
     return HttpResponse('google.com, pub-3568209057248105, DIRECT, f08c47fec0942fa0') 
  
 # class based view for each post in amp template
-def amp(request, slug):
-        article = get_object_or_404(Article, slug=slug)
+def amp(request, article_slug):
+        article = get_object_or_404(Article, slug=article_slug)
         articles = Article.objects.all()
         heading = HeadingArticle.objects.all()
         context = {
