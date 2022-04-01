@@ -18,6 +18,7 @@ def amp(request, article_slug):
         article = get_object_or_404(Article, slug=article_slug)
         articles = Article.objects.all()
         heading = HeadingArticle.objects.all()
+        articles = Article.objects.order_by('-created_at')
         context = {
             "articles": articles,
             "article": article,

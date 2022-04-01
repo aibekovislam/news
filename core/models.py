@@ -117,6 +117,13 @@ class Carousel(models.Model):
     picture = models.ImageField(upload_to='carousel_image')
     title = models.CharField(max_length=150)
     text = models.TextField()
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        null=True,
+    )
+
+    def get_absolute_url(self):
+        return reverse("article", kwargs={'article_slug': self.slug})
     
     class Meta:
         verbose_name = "Карусель"
