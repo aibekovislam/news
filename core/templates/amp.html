@@ -152,7 +152,7 @@ margin: 0 auto; }
           },
           "headline": "{{ article.title }}",
           "image": [
-            "{{ article.picture.url }}"
+            "{% if article.picture %}{{ article.picture.url }} {% endif %}"
           ],
           "datePublished": "{{ article.created_at }}",
           "dateModified": "{{ article.created_at }}",
