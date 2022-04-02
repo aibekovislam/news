@@ -68,36 +68,20 @@
         </script>
       </div>
       <div class="col-md-3">
-        <div class="carousel_block2 mb-1">
-          <h4 class="main-news2">Новости дня</h4>
-          <hr class="line2 mb-4">
-          {% for article in articles %}
-            {% if article.carousel_block %}
-              {% if not article.pagination_article %}
-                <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-                <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
-                <hr>
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-          <div class="button-wrapper">
-            <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
-          </div>
-      </div>
-      <div class="goriz_ads">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
-        crossorigin="anonymous"></script>
-        <!-- 7234 -->
-        <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3568209057248105"
-        data-ad-slot="5502899079"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
+        <div class="goriz_ads">
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
+          crossorigin="anonymous"></script>
+          <!-- 7234 -->
+          <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-3568209057248105"
+          data-ad-slot="5502899079"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
     </div>
     </div>
     </div>

@@ -155,19 +155,6 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="carousel_block2">
-            <h4 class="main-news2">Новости дня</h4>
-            <hr class="line2 mb-4">
-            {% for article in articles %}
-              {% if article.carousel_block %}
-                <div class="revolut2"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-                <div class="date_time5">{{ article.created_at|date:"H:i" }}</div>
-                <hr>
-              {% endif %}
-            {% endfor %}
-            <div class="button-wrapper mb-3">
-              <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
-            </div>
         </div>
       </div>
       </div>

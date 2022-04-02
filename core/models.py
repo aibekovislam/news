@@ -48,8 +48,6 @@ class Article(models.Model):
 
     center_article = models.BooleanField(default=False)
 
-    carousel_block = models.BooleanField(default=False, verbose_name=_("Новости дня"))
-
     right_panel_article = models.BooleanField(default=False, verbose_name=_("Главные новости"))
 
     pagination_article = models.BooleanField(default=False, verbose_name=_("Архивные"))
