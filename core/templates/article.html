@@ -84,36 +84,36 @@
   </div>
   <div class="container mt-8">
       <div class="row">
-          <div class="col-md-9">
-            <div class="black_block_news2 mt-3">
-              <h1 class="zago_main01">{{ article.title }}</h1>
-              <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
-              <p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
-              {% if article.picture %}
-                <div class="img-mobile">
-                  <img class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
-                </div>
-              {% endif %}
-              {% autoescape off %}
-              <p class="article_text2">{{ article.text|linebreaksbr }}</p>
-              {% endautoescape %}
+          <div class="col-md-3 mt-4">
+            <div class="vertical_ads">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
+              crossorigin="anonymous"></script>
+              <!-- vn -->
+              <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-3568209057248105"
+              data-ad-slot="3392667093"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+        <div class="col-md-9 mt-3">
+          <div class="black_block_news2 mt-3">
+            <h1 class="zago_main01">{{ article.title }}</h1>
+            <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
+            <p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
+            {% if article.picture %}
+              <div class="img-mobile">
+                <img class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
               </div>
-          </div>
-        <div class="col-md-3 mt-3">
-          <div class="vertical_ads">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
-            crossorigin="anonymous"></script>
-            <!-- vn -->
-            <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3568209057248105"
-            data-ad-slot="3392667093"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
+            {% endif %}
+            {% autoescape off %}
+            <p class="article_text2">{{ article.text|linebreaksbr }}</p>
+            {% endautoescape %}
+            </div>
         </div>
     </div>
   </div>
