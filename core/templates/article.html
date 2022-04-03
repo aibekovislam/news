@@ -80,7 +80,7 @@
         </div>
       </div>
   </nav>
-<div class="container mt-8">
+<div class="container mt-custom">
   <div class="goriz_ads mt-5">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3568209057248105"
       crossorigin="anonymous"></script>
@@ -98,15 +98,15 @@
   </div>
   <div class="container">
       <div class="row">
-          <div class="col-md-9 mt-2">
+          <div class="col-md-9 mt-4">
             <div itemscope itemtype=http://schema.org/Article>
               <div class="black_block_news2">
                 <h1 itemprop="{{ article.title }}" class="zago_main01">{{ article.title }}</h1>
                 <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
-                <meta itemprop="datePublished" class="date_time d-inline ml-5" content="{{ article.created_at|date:"o-m-d" }}">{{ article.created_at|date:"H:i, d F" }}</p>
+                <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
                 {% if article.picture %}
                   <div class="img-mobile">
-                    <img itemprop="image" class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="{{article.slug}}">
+                    <img itemprop="image" class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="{{article.slug}}">
                   </div>
                 {% endif %}
                 {% autoescape off %}
