@@ -137,6 +137,9 @@
   <div class="row">
       <div class="col-md-8">
         <div class="black_block_news2">
+          <div class="button-wrapper mb-3">
+            <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
+          </div>
           {% for article in articles %}
             {% if article.text_article %}
               {% if not article.pagination_article %}
