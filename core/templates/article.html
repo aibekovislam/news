@@ -99,19 +99,21 @@
             </div>
           </div>
         <div class="col-md-9">
-          <div class="black_block_news2">
-            <h1 class="zago_main01">{{ article.title }}</h1>
-            <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
-            <p class="date_time d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
-            {% if article.picture %}
-              <div class="img-mobile">
-                <img class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image">
-              </div>
-            {% endif %}
-            {% autoescape off %}
-            <p class="article_text2">{{ article.text|linebreaksbr }}</p>
-            {% endautoescape %}
+          <div itemscope itemtype=http://schema.org/Article>
+            <div class="black_block_news2">
+              <h1 itemprop="{{ article.title }}" class="zago_main01">{{ article.title }}</h1>
+              <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
+              <meta itemprop="datePublished" class="date_time d-inline ml-5" content="{{ article.created_at|date:"o-m-d" }}">{{ article.created_at|date:"H:i, d F" }}</p>
+              {% if article.picture %}
+                <div class="img-mobile">
+                  <img itemprop="image" class="img-custom mt-4" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="{{article.slug}}">
+                </div>
+              {% endif %}
+              {% autoescape off %}
+              <p itemprop="articleBody" class="article_text2">{{ article.text|linebreaksbr }}</p>
+              {% endautoescape %}
             </div>
+          </div>
         </div>
     </div>
   </div>
