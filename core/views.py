@@ -51,15 +51,10 @@ def articles(request):
     articles = Article.objects.order_by('-created_at')
     obj = Carousel.objects.all()
     heading = HeadingArticle.objects.all()
-    paginator = Paginator(articles, per_page=82)
-    page_number = request.GET.get('page', 1)
-    page_obj = paginator.get_page(page_number)
     context = {
-        "articles": page_obj.object_list,
-        "paginator": paginator,
+        "articles": articles,
         "heading": heading,
-        "obj": obj,
-        "page_number": int(page_number)
+        "obj": obj
     }
     return render(
         request,
