@@ -42,7 +42,6 @@ urlpatterns = [
     path('article/<slug:article_slug>/', article_page, name="article"),
     path('author/<slug:author_slug>/', author_page, name="author"),
     path('carousel/<int:id>/', carousel_page, name="carousel"),
-    url(r'^ads\.txt$', views.authorized_digital_sellers_view, name='authorized_digital_sellers'),
     path('right-panel-article/', right_panel_article, name="right_panel_articles"),
     path('heading/<int:heading_id>/', heading_page, name="heading"),
     path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain"), name="robots"),
