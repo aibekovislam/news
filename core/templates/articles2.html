@@ -24,9 +24,9 @@
     
       <div class="container">
         <div class="row">
-          <h1 class="all-news">Все новости</h1>
+          <h1 class="all-news mt-8">Все новости</h1>
           <div class="col-md-1"></div>
-          <div class="col-md-7 mt-3">
+          <div class="col-md-10 mt-3">
             <div class="black_block_news2">
               {% for article in articles %}
                 <h1 class="page_2_title"><a href="{% url 'article' article.slug %}" class="text-decoration-none text-dark">{{ article.title }}</a></h1>
@@ -36,7 +36,7 @@
               {% endfor %}
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-1">
           </div>
         </div>
     </div>
