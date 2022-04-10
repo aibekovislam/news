@@ -42,19 +42,28 @@
           <div class="col-md-4 col-sm-4"></div>
           <div class="col-md-4 col-sm-4">
               <ul class="pagination">
-                  <li class="page-item mr-3">
-                    <a href="{% url 'main' %}" class="page-link">Назад</a>
+                {% if page_obj.has_previous %}
+                 <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
                   </li>
+                {% endif %}
                   {% for i in paginator.page_range %}
                   <li class="page-item {% if i == page_number %}active{% endif %}">
                     <a href="?page={{ i }}" class="page-link">{{ i }}</a>
                   </li>
                 {% endfor %}
+                {% if page_obj.has_next %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                {% endif %}
               </ul>
           </div>
           <div class="col-md-4 col-sm-4"></div>
         </div>
-      </div>
-
-      
+      </div>    
 {% endblock %}
