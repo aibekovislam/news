@@ -51,25 +51,6 @@ body{
 .mt-custom{
 	margin-top: 75px;
 }
-
-.zago_news{
-    color: black;
-    font-family: 'Playfair Display', serif;
-}
-
-.zago_news_link{
-    position: relative;
-	color: black; /*задаём цвет ссылки*/
-	cursor: pointer;
-	line-height: 1; /*задаём высоту строки*/
-	text-decoration: none; /*убираем подчёркивание*/
-}
-
-
-.zago_news_link:hover{
-    color: black;
-}
-
 .post_pp{
 	line-height: 2.1;
 	font-weight: 500;
