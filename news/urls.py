@@ -38,7 +38,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.articles, name="main"),
     path('all-news/', views.article_page_2, name="article_page_2"),
-    path('article/<slug:article_slug>/amp/', amp, name ='post_detail_amp'),    
+    path('article/<slug:article_slug>/amp.html/', amp, name ='post_detail_amp'),    
     path('article/<slug:article_slug>/', article_page, name="article"),
     path('author/<slug:author_slug>/', author_page, name="author"),
     path('carousel/<int:id>/', carousel_page, name="carousel"),
