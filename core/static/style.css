@@ -154,7 +154,7 @@ body{
 	color: black;
 	transition-duration: 0.3s;
 	font-family: 'Lora', serif;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: normal;
 }
 
@@ -209,6 +209,7 @@ body{
 	font-size: 17px;
 	display: table-cell;
 	line-height: 1.5em;
+	flex-grow: 1;
 }
 
 
@@ -236,7 +237,7 @@ body{
 	color: black;
 	transition-duration: 0.3s;
 	font-family: 'Lora', serif;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 .link-text3:hover{
@@ -280,6 +281,13 @@ body{
 }
 
 .date_time5{
+	color: #9c9c9c;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+}
+
+.date_time_cus{
 	color: #9c9c9c;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
@@ -425,8 +433,6 @@ button:active, button:focus {
 	max-width: 320px;
 	max-height: 480px;
 }
-
-
 .mr-5{
 	margin-right: 27px;
 }
