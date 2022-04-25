@@ -153,7 +153,7 @@
             </div>
   
   
-  <div class="black_block mt-3 pt-3 pb-3">
+  <div class="pk">
     <div class="container">
       <div class="row">
         <div class="col-md-9">
@@ -205,15 +205,12 @@
   </div>
 
 <div class="mobile_n">
-  <div class="container">
-      <div class="row">
-        <div class="col-md-9">
           <div class="carousel_block">
-            <div id="carouselExampleControlsNoTouching" class="carousel slide carousel-dark pb-3" data-bs-touch="false" data-bs-interval="false">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide carousel pb-3" data-bs-touch="false" data-bs-interval="false">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>  
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -226,18 +223,16 @@
               <div class="carousel-inner">
                   {% for img in obj %}  
                 <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                  <div class="row">
-                    <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
-                      <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
-                      height: auto;
-                      border-radius: 4px;" alt="...">
-                  </div>
-                  <h1 class="xxl text-center pt-3">{{ img.title }}</a></h1>
-                </div>
+                  <div class="img-mobile">
+                        <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
+                          <img src="{{img.picture.url}}" class=" img-custom" alt="{{ img.title }}">
+                        </a>
+                        <div class="django">
+                          <h1 class="zago_main01">{{ img.title }}</a></h1>
+                        </div>
+                      </div>
+                    </div>
                 {% endfor %}
-              </div>
-            </div>
-          </div>
         </div>
         <div class="col-md-3">
            <!-- Yandex.RTB R-A-1618515-7 -->
@@ -280,7 +275,7 @@
             {% for article in articles %}
               {% if article.right_panel_article %}
                 <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
-                <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
+                <p class="date_time5">{{ article.created_at|date:"H:i" }}</p>
                 <hr>
               {% endif %}
             {% endfor %}
