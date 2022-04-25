@@ -83,6 +83,7 @@
         </div>
       </div>
   </nav>
+<div class="pk">
   <div class="container mt-5">
       <div class="row">
           <div class="col-md-9 mt-4">
@@ -116,6 +117,27 @@
         </div>
     </div>
   </div>
+</div>
+
+            <div class="mobile">
+                {% if article.picture %}
+                  <div class="img-mobile">
+                    <img itemprop="image" class="img-custom mt-3" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="{{article.slug}}">
+                  </div>
+                {% endif %}
+                <div class="white-bg">
+                  <div class="django">
+                    <h1 itemprop="{{ article.title }}" class="zago_main01">{{ article.title }}</h1>
+                  </div>
+                  <div class="mobile_block">
+                    <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
+                    <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
+                    {% autoescape off %}
+                    <p itemprop="articleBody" class="article_text2">{{ article.text|linebreaksbr }}</p>
+                    {% endautoescape %}
+                  </div>
+                </div>
+            </div>
   
   
   <div class="black_block mt-3 pt-3 pb-3">
@@ -168,6 +190,58 @@
       </div>
     </div>
   </div>
+
+<div class="mobile_n">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="carousel_block">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide carousel-dark pb-3" data-bs-touch="false" data-bs-interval="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>  
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+              <div class="carousel-inner">
+                  {% for img in obj %}  
+                <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                  <div class="row">
+                    <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
+                      <img src="{{img.picture.url}}" class=" img-adaptive2" style="width: 100%;
+                      height: auto;
+                      border-radius: 4px;" alt="...">
+                  </div>
+                  <h1 class="xxl text-center pt-3">{{ img.title }}</a></h1>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+           <!-- Yandex.RTB R-A-1618515-7 -->
+           <div id="yandex_rtb_R-A-1618515-7"></div>
+           <script>window.yaContextCb.push(()=>{
+           Ya.Context.AdvManager.render({
+           renderTo: 'yandex_rtb_R-A-1618515-7',
+           blockId: 'R-A-1618515-7'
+           })
+           })</script>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<div class="pk">
   <div class="container">
       <div class="row">
         <div class="col-md-12 mt-3">
@@ -184,8 +258,25 @@
       </div>
     </div>
   </div>
-  
-  
+</div>
+<div class="mobile_n">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12 mt-3">
+          <div class="black_block_news2">
+            {% for article in articles %}
+              {% if article.right_panel_article %}
+                <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+                <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
+                <hr>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="goriz_ads mt-3">
     
     </div>
