@@ -214,6 +214,11 @@ body{
 	height: auto;
 }
 
+.black_block_mb{
+	width: 100%;
+	height: auto;
+}
+
 
 .mr-3{
 	margin-right: 10px;
@@ -484,6 +489,7 @@ width: auto;
 	  height: 400px;
 	  overflow: hidden;
 	  background-color: #20252a;
+	  position: relative;
 	}
   }
 
@@ -914,7 +920,7 @@ h5{
 
 .django{
 	position: absolute;
-	bottom: 450px;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 2;
