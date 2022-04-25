@@ -1,48 +1,97 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<div class="container mt-5">
-  <div class="row">
-      <div class="col-md-9 mt-4">
+<div class="pk">
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-9 mt-4">
+          <div class="black_block_news2">
+            <h1 class="zago_main01">{{ carousel.title }}</h1>
+            {% if carousel.picture %}
+                <img class="img-fluid mt-2" {% if carousel.picture %} src="{{ carousel.picture.url }}" {% endif %} alt="Article image">
+              {% endif %}
+              {% autoescape off %}
+              <p class="article_text2">{{ carousel.text|linebreaksbr }}</p>
+              {% endautoescape %}
+            </div>
+        </div>
+      <div class="col-md-3 mt-4">
+        <div class="vertical_ads">
+          <!-- Yandex.RTB R-A-1618515-3 -->
+          <div id="yandex_rtb_R-A-1618515-3"></div>
+          <script>window.yaContextCb.push(()=>{
+          Ya.Context.AdvManager.render({
+          renderTo: 'yandex_rtb_R-A-1618515-3',
+          blockId: 'R-A-1618515-3'
+          })
+          })</script>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+<div class="pk">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-4">
         <div class="black_block_news2">
-          <h1 class="zago_main01">{{ carousel.title }}</h1>
-          {% if carousel.picture %}
-              <img class="img-custom mt-2" {% if carousel.picture %} src="{{ carousel.picture.url }}" {% endif %} alt="Article image">
+          {% for article in articles %}
+            {% if article.right_panel_article %}
+              <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+              <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
+              <hr>
             {% endif %}
-            {% autoescape off %}
-            <p class="article_text2">{{ carousel.text|linebreaksbr }}</p>
-            {% endautoescape %}
-          </div>
-      </div>
-    <div class="col-md-3 mt-4">
-      <div class="vertical_ads">
-        <!-- Yandex.RTB R-A-1618515-3 -->
-        <div id="yandex_rtb_R-A-1618515-3"></div>
-        <script>window.yaContextCb.push(()=>{
-        Ya.Context.AdvManager.render({
-        renderTo: 'yandex_rtb_R-A-1618515-3',
-        blockId: 'R-A-1618515-3'
-        })
-        })</script>
-      </div>
-    </div>
-</div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 mt-4">
-      <div class="black_block_news2">
-        {% for article in articles %}
-          {% if article.right_panel_article %}
-            <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
-            <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
-            <hr>
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
+  </div>
 </div>
-</div>
+
+        <div class="mobile">
+            {% if carousel.picture %}
+              <div class="img-mobile">
+                <img class="img-custom mt-2" {% if carousel.picture %} src="{{ carousel.picture.url }}" {% endif %} alt="Article image">
+                <div class="django">
+                  <h1 itemprop="{{ carousel.title }}" class="zago_main01">{{ carousel.title }}</h1>
+                </div>
+              </div>
+              {% endif %}
+              <div class="white-bg">
+                  <div class="mobile_block">
+                    {% autoescape off %}
+                    <p class="article_text2">{{ carousel.text|linebreaksbr }}</p>
+                    {% endautoescape %}
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="vertical_ads">
+          <!-- Yandex.RTB R-A-1618515-3 -->
+          <div id="yandex_rtb_R-A-1618515-3"></div>
+          <script>window.yaContextCb.push(()=>{
+          Ya.Context.AdvManager.render({
+          renderTo: 'yandex_rtb_R-A-1618515-3',
+          blockId: 'R-A-1618515-3'
+          })
+          })</script>
+      </div>
+<div class="mobile_n mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="black_block_news2">
+          {% for article in articles %}
+            {% if article.right_panel_article %}
+              <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+              <p class="date_time">{{ article.created_at|date:"H:i" }}</p>
+              <hr>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
 {% endblock %}

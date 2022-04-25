@@ -130,11 +130,24 @@
                 {% endif %}
                 <div class="white-bg">
                   <div class="mobile_block">
+                    {% if not article.picture %}
+                      <h1 itemprop="{{ article.title }}" class="zago_main01 mt-3">{{ article.title }}</h1>
+                    {% endif %}
                     <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
                     <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
                     {% autoescape off %}
                     <p itemprop="articleBody" class="article_text2">{{ article.text|linebreaksbr }}</p>
                     {% endautoescape %}
+                  </div>
+                  <div class="vertical_ads">
+                    <!-- Yandex.RTB R-A-1618515-7 -->
+                    <div id="yandex_rtb_R-A-1618515-7"></div>
+                    <script>window.yaContextCb.push(()=>{
+                    Ya.Context.AdvManager.render({
+                    renderTo: 'yandex_rtb_R-A-1618515-7',
+                    blockId: 'R-A-1618515-7'
+                    })
+                    })</script>
                   </div>
                 </div>
             </div>
