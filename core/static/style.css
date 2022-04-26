@@ -140,6 +140,12 @@ body{
 	border-radius: 4px;
 }
 
+@media only screen and (max-width: 600px) {
+	.img-fluid {
+		border-radius: 0;
+	}
+  }
+
 .img-m{
 	margin-bottom: 5px;
 	margin-top: 20px;
@@ -892,6 +898,13 @@ h5{
    .scale img:hover {
     transform: scale(1.1); /* Увеличиваем масштаб */
    }
+
+
+@media only screen and (max-width: 600px) {
+	.scale {
+		padding-bottom: 0px;
+	}
+  }
 
 
 
