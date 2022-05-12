@@ -76,7 +76,7 @@
               <div class="carousel-inner">
                   {% for img in obj %}  
                   <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                      <div class="img-mobile">
+                      <div class="img-mobile_ci">
                         <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
                           <img src="{{img.picture.url}}" class=" img-custom" alt="{{ img.title }}">
                         </a>

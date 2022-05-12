@@ -121,7 +121,7 @@
 
             <div class="mobile">
                 {% if article.picture %}
-                  <div class="img-mobile">
+                  <div class="img-mobile_ci">
                     <img itemprop="image" class="img-custom mt-3" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="{{article.slug}}">
                     <div class="django">
                       <h1 itemprop="{{ article.title }}" class="zago_main01">{{ article.title }}</h1>
