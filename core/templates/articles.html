@@ -53,7 +53,7 @@
       </div>
       </div>
     </div>
-  </div>
+  </div><!-- карусель пк версия -->
 </div>
 
 <div class="mobile">
@@ -80,7 +80,7 @@
                         <a href="{% url 'carousel' img.id %}" class="text-decoration-none text-dark">
                           <img src="{{img.picture.url}}" class=" img-custom" alt="{{ img.title }}">
                         </a>
-                        <div class="django">
+                        <div class="django2">
                           <h1 class="zago_main01">{{ img.title }}</a></h1>
                         </div>
                       </div>
@@ -101,8 +101,88 @@
       </div>
       </div>
     </div>
-  </div>
+  </div><!-- карусель мобильная версия -->
 </div>
+
+<div class="pk">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-sm-12 mt-1">
+        <div class="black_block_news">
+          <h4 class="main-news">Главные новости</h4>
+          <hr class="line">
+          {% for article in articles %}
+            {% if article.right_panel_article %}
+              {% if not article.pagination_article %}
+                <div class="revolut d-inline"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
+                <div class="date_time_cus mt-1">{{ article.created_at|date:"H:i" }}</div>
+                <hr>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          <div class="button-wrapper mb-3">
+            <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
+          </div>
+        <div class="ads_block7">
+          <!-- Yandex.RTB R-A-1618515-3 -->
+          <div id="yandex_rtb_R-A-1618515-3"></div>
+          <script>window.yaContextCb.push(()=>{
+          Ya.Context.AdvManager.render({
+          renderTo: 'yandex_rtb_R-A-1618515-3',
+          blockId: 'R-A-1618515-3'
+          })
+          })</script>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-1">
+        {% for article in articles %}
+          {% if article.center_article %}
+            {% if not article.pagination_article %}
+              <div class="scale mb-2">
+                <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
+                <!--<a class="text-link2">{{ article.heading }}</a>-->
+                <h1 class="news_main ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <!-- Yandex Native Ads C-A-1618515-2 -->
+        <div id="id-C-A-1618515-2"></div>
+        <script>window.yaContextCb.push(()=>{
+        Ya.Context.AdvManager.renderWidget({
+        renderTo: 'id-C-A-1618515-2',
+        blockId: 'C-A-1618515-2'
+        })
+        })</script>
+      </div>
+      <div class="col-md-4 mt-1">
+        {% for article in articles %}
+          {% if article.main_article %}
+            {% if not article.pagination_article %}
+              <div class="scale mb-2">
+                <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image"></a>
+                <h1 class="zago_main0 ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <div class="ads_block7">
+          <!-- Yandex.RTB R-A-1618515-5 -->
+          <div id="yandex_rtb_R-A-1618515-5"></div>
+          <script>window.yaContextCb.push(()=>{
+          Ya.Context.AdvManager.render({
+          renderTo: 'yandex_rtb_R-A-1618515-5',
+          blockId: 'R-A-1618515-5'
+          })
+          })</script>
+        </div>
+      </div>
+    </div>
+  </div><!-- статьи пк версия -->
+</div>
+
+<div class="mobile_i">
       <div class="black_block_news">
         <h4 class="main-news">Главные новости</h4>
         <hr class="line">
@@ -159,9 +239,22 @@
       {% for article in articles %}
         {% if article.main_article %}
           {% if not article.pagination_article %}
+          <!--
             <div class="scale mb-2">
               <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="Article image"></a>
               <h1 class="zago_main0 ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
+            </div>
+          -->
+          <div class="block_meme">
+              <div class="img-mobile mb-2">
+                <a href="{% url 'article' article.slug %}"><img class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
+                <!--<a class="text-link2">{{ article.heading }}</a>-->
+                <div class="django">
+                  <h1 class="news_main"><a href="{% url 'article' article.slug %}" class="link-text_article">{{ article.title }}</a></h1>
+                  <a class="text-link2">{{ article.heading }}</a>
+                  <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ms-2">{{ article.created_at|date:"H:i, d F" }}</p>
+                </div>
+              </div>
             </div>
           {% endif %}
         {% endif %}
@@ -177,8 +270,10 @@
         })</script>
       </div>
     </div>
-  </div>
+  </div><!-- статьи мобильная версия -->
 </div>
+</div>
+
 <div class="container mt-3">
   <div class="row">
       <div class="col-md-8">
