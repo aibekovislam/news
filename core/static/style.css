@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
   
 
 body{
@@ -128,7 +129,7 @@ body{
 		text-decoration: none;
 		font-family: 'PT Sans', sans-serif;
 		font-weight: normal;
-		display: block;
+		display: inline-block;
 	}
   }
 
@@ -239,10 +240,25 @@ body{
   }
 
   @media only screen and (max-width: 600px) {
-	.link-text2 {
-	  font-size: 15px;
+	.link-text_article {
+	  font-size: 22px;
+	  line-height: 1;
 	}
   }
+
+
+ .link-text_article{
+	text-decoration: none;
+	color: white;
+	transition-duration: 0.3s;
+	font-family: 'Inter', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.link-text_article:hover{
+	color: white;
+}
 
 
 
@@ -360,10 +376,10 @@ button:active, button:focus {
 
 
 .date_time5{
-	color: #96a3b0;
+	color: #9c9c9c;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 14px;
 	margin-bottom: 15px;
 	/*margin-right: 13px;*/
 }
@@ -490,6 +506,7 @@ width: auto;
 	  overflow: hidden;
 	  background-color: #20252a;
 	  position: relative;
+	  border-radius: 6px;
 	}
   }
 
@@ -807,6 +824,12 @@ h5{
 
 }
 
+.block_meme{
+	padding-top: 17px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
 .footer-text{
 	color: white;
 	padding-top: 17px;
@@ -926,7 +949,7 @@ h5{
 	background: linear-gradient(to bottom, rgba(41, 41, 41, 0) 0%, rgba(41, 41, 41, 0.5) 30%, #212529 80%);
 	color: white;
 	padding: 15px;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 }
 
 
