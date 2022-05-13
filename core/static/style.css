@@ -61,6 +61,15 @@ body{
 	padding: 15px;
 }
 
+.news_mainss{
+	line-height: 1.5;
+	font-weight: 500;
+	margin-top: 1px;
+	font-size: 17px;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bolder;
+}
+
 .news_main2{
 	line-height: 1.5;
 	margin-top: 10px;
