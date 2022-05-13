@@ -217,8 +217,6 @@
                 <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
                 <!--<a class="text-link2">{{ article.heading }}</a>-->
                   <div class="news_main"><a href="{% url 'article' article.slug %}" class="link-text_article mb-2">{{ article.title }}</a>
-                  <a class="text-link2">{{ article.heading }}</a>
-                  <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ms-2">{{ article.created_at|date:"H:i, d F" }}</p>
                   </div>
             </div>
           {% endif %}
@@ -268,54 +266,103 @@
 </div>
 </div>
 
-<div class="container mt-3">
-  <div class="row">
-      <div class="col-md-8">
-        <div class="black_block_news2">
-          <div class="button-wrapper mb-3">
-            <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
-          </div>
-          {% for article in articles %}
-            {% if article.text_article %}
-              {% if not article.pagination_article %}
-                {% if not article.right_panel_article %}
-                  <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></div>
-                  <div class="date_time_cus mt-1">{{ article.created_at|date:"H:i" }}</div>
-                  <hr >
-                {% endif %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    <div class="col-md-4">
-      {% for article in articles %}
-          {% if not article.text_article %}
-              {% if article.picture %}
-                {% if not article.main_article %}
-                  {% if not article.center_article %}
-                      {% if not article.right_panel_article %}
-                          {% if not article.pagination_article %}
-                            {% if not article.pagination_picture_article %}
-                              <div class="d-flexw">
-                                <div class="mb-2 mr-5" style="width: 18rem;">
-                                <div class="scale">
-                                  <a href="{% url 'article' article.slug %}"><img src="{{ article.picture.url }}" class="img-adaptive mr-7" alt="..."></a>
-                                  <h1 class="revolut ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
-                                </div>
-                                </div>
-                              </div>
-                            {% endif %}
-                          {% endif %}
-                        {% endif %}
-                      {% endif %}
+<div class="pk">
+  <div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+          <div class="black_block_news2">
+            <div class="button-wrapper mb-3">
+              <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
+            </div>
+            {% for article in articles %}
+              {% if article.text_article %}
+                {% if not article.pagination_article %}
+                  {% if not article.right_panel_article %}
+                    <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></div>
+                    <div class="date_time_cus mt-1">{{ article.created_at|date:"H:i" }}</div>
+                    <hr >
                   {% endif %}
                 {% endif %}
               {% endif %}
-          {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+      <div class="col-md-4">
+        {% for article in articles %}
+            {% if not article.text_article %}
+                {% if article.picture %}
+                  {% if not article.main_article %}
+                    {% if not article.center_article %}
+                        {% if not article.right_panel_article %}
+                            {% if not article.pagination_article %}
+                              {% if not article.pagination_picture_article %}
+                                <div class="d-flexw">
+                                  <div class="mb-2 mr-5" style="width: 18rem;">
+                                  <div class="scale">
+                                    <a href="{% url 'article' article.slug %}"><img src="{{ article.picture.url }}" class="img-adaptive mr-7" alt="..."></a>
+                                    <h1 class="revolut ps-3 pe-3 pt-3"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></h1>
+                                  </div>
+                                  </div>
+                                </div>
+                              {% endif %}
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+            {% endfor %}
+      </div>
     </div>
   </div>
 </div>
+
+<div class="mobile_i">
+          <div class="black_block_news2">
+            <div class="button-wrapper mb-3">
+              <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
+            </div>
+            {% for article in articles %}
+              {% if article.text_article %}
+                {% if not article.pagination_article %}
+                  {% if not article.right_panel_article %}
+                    <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text3">{{ article.title }}</a></div>
+                    <div class="date_time_cus mt-1">{{ article.created_at|date:"H:i" }}</div>
+                    <hr >
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% for article in articles %}
+            {% if not article.text_article %}
+                {% if article.picture %}
+                  {% if not article.main_article %}
+                    {% if not article.center_article %}
+                        {% if not article.right_panel_article %}
+                            {% if not article.pagination_article %}
+                              {% if not article.pagination_picture_article %}
+                                <div class="block_meme">
+                                      <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
+                                      <!--<a class="text-link2">{{ article.heading }}</a>-->
+                                        <div class="news_main"><a href="{% url 'article' article.slug %}" class="link-text_article mb-2">{{ article.title }}</a>
+                                          <a class="text-link2">{{ article.heading }}</a>
+                                        <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ms-2">{{ article.created_at|date:"H:i, d F" }}</p>
+                                        </div>
+                                  </div>
+                              {% endif %}
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+</div>
+
 <div class="container">
   <div class="goriz_ads">
   </div>
