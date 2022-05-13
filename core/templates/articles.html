@@ -214,15 +214,12 @@
         {% if article.center_article %}
           {% if not article.pagination_article %}
             <div class="block_meme">
-              <div class="img-mobile mb-2">
-                <a href="{% url 'article' article.slug %}"><img class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
+                <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
                 <!--<a class="text-link2">{{ article.heading }}</a>-->
-                <div class="django">
-                  <h1 class="news_main"><a href="{% url 'article' article.slug %}" class="link-text_article">{{ article.title }}</a></h1>
+                  <div class="news_main"><a href="{% url 'article' article.slug %}" class="link-text_article mb-2">{{ article.title }}</a>
                   <a class="text-link2">{{ article.heading }}</a>
                   <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ms-2">{{ article.created_at|date:"H:i, d F" }}</p>
-                </div>
-              </div>
+                  </div>
             </div>
           {% endif %}
         {% endif %}
@@ -246,15 +243,12 @@
             </div>
           -->
           <div class="block_meme">
-              <div class="img-mobile mb-2">
-                <a href="{% url 'article' article.slug %}"><img class="img-custom" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
+                <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
                 <!--<a class="text-link2">{{ article.heading }}</a>-->
-                <div class="django">
-                  <h1 class="news_main"><a href="{% url 'article' article.slug %}" class="link-text_article">{{ article.title }}</a></h1>
-                  <a class="text-link2">{{ article.heading }}</a>
+                  <div class="news_main"><a href="{% url 'article' article.slug %}" class="link-text_article mb-2">{{ article.title }}</a>
+                    <a class="text-link2">{{ article.heading }}</a>
                   <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ms-2">{{ article.created_at|date:"H:i, d F" }}</p>
-                </div>
-              </div>
+                  </div>
             </div>
           {% endif %}
         {% endif %}
