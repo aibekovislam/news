@@ -139,6 +139,7 @@
                       <h1 itemprop="{{ article.title }}" class="zago_main01 mt-3">{{ article.title }}</h1>
                     {% endif %}
                     <div class="topic_body_title">{{ article.tt }}</div>
+                    <hr>
                     {% autoescape off %}
                     <p itemprop="articleBody" class="article_text2">{{ article.text|linebreaksbr }}</p>
                     {% endautoescape %}
