@@ -115,22 +115,6 @@
             blockId: 'R-A-1618515-7'
             })
             })</script>
-          <div class="black_block_news3">
-          <h4 class="main-news">Главные новости</h4>
-          <hr class="line">
-          {% for article in articles %}
-            {% if article.right_panel_article %}
-              {% if not article.pagination_article %}
-                <div class="revolut d-inline"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
-                <div class="date_time_cus mt-1">{{ article.created_at|date:"H:i" }}</div>
-                <hr>
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-          <div class="button-wrapper mb-3">
-            <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
-          </div>
-          </div>
         </div>
           </div>
     </div>
