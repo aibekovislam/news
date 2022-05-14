@@ -84,26 +84,28 @@
       </div>
   </nav>
 <div class="pk">
-  <div class="container mt-5">
+  <div class="black_block_news2">
+    <div class="container mt-5">
       <div class="row">
           <div class="col-md-9 mt-4">
-            <div itemscope itemtype=http://schema.org/Article>
-              <div class="black_block_news2">
-                <h1 itemprop="{{ article.title }}" class="zago_main01">{{ article.title }}</h1>
-                <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
-                <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
-                {% if article.picture %}
-                  <div class="img-mobile">
-                    <img itemprop="image" class="img-custom mt-3" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="{{article.slug}}">
+            <div class="content_news">
+              <div class="topic_body">
+                <div itemscope itemtype=http://schema.org/Article>
+                    <h1 itemprop="{{ article.title }}" class="zago_main01_c">{{ article.title }}</h1>
+                    <div class="topic_body_title">{{ article.tt }}</div>
+                    {% if article.picture %}
+                      <div class="img-customize">
+                        <img itemprop="image" class="img-custom3 mt-3" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="{{article.slug}}">
+                      </div>
+                    {% endif %}
+                    {% autoescape off %}
+                    <p itemprop="articleBody" class="article_text2">{{ article.text|linebreaksbr }}</p>
+                    {% endautoescape %}
                   </div>
-                {% endif %}
-                {% autoescape off %}
-                <p itemprop="articleBody" class="article_text2">{{ article.text|linebreaksbr }}</p>
-                {% endautoescape %}
+                </div>
               </div>
             </div>
-          </div>
-        <div class="col-md-3 mt-4">
+            <div class="col-md-3 mt-4">
           <div class="vertical_ads">
             <!-- Yandex.RTB R-A-1618515-7 -->
             <div id="yandex_rtb_R-A-1618515-7"></div>
@@ -113,10 +115,27 @@
             blockId: 'R-A-1618515-7'
             })
             })</script>
+          <div class="black_block_news3">
+          <h4 class="main-news">Главные новости</h4>
+          <hr class="line">
+          {% for article in articles %}
+            {% if article.right_panel_article %}
+              {% if not article.pagination_article %}
+                <div class="revolut d-inline"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></div>
+                <div class="date_time_cus mt-1">{{ article.created_at|date:"H:i" }}</div>
+                <hr>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          <div class="button-wrapper mb-3">
+            <a href="{% url 'article_page_2' %}" class="btn btn-outline-dark">Все новости</a>
+          </div>
           </div>
         </div>
+          </div>
     </div>
   </div>
+</div>
 </div>
 
             <div class="mobile">
@@ -125,6 +144,8 @@
                     <img itemprop="image" class="img-custom mt-3" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="{{article.slug}}">
                     <div class="django">
                       <h1 itemprop="{{ article.title }}" class="zago_main01">{{ article.title }}</h1>
+                      <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
+                      <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
                     </div>
                   </div>
                 {% endif %}
@@ -133,8 +154,7 @@
                     {% if not article.picture %}
                       <h1 itemprop="{{ article.title }}" class="zago_main01 mt-3">{{ article.title }}</h1>
                     {% endif %}
-                    <a href="#" class="text-link2 d-inline">{{ article.heading }}</a>
-                    <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ml-5">{{ article.created_at|date:"H:i, d F" }}</p>
+                    <div class="topic_body_title">{{ article.tt }}</div>
                     {% autoescape off %}
                     <p itemprop="articleBody" class="article_text2">{{ article.text|linebreaksbr }}</p>
                     {% endautoescape %}
@@ -154,7 +174,7 @@
   
   
   <div class="pk">
-    <div class="container">
+    <div class="container mt-4">
       <div class="row">
         <div class="col-md-9">
           <div class="carousel_block">
