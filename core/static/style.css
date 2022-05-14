@@ -106,9 +106,7 @@ body{
 }
 
 .zago_main01{
-	font-family: 'PT Sans', Arial, Helvetica, sans-serif;
-	font-size: 34px;
-	font-weight: 900;
+	font-family: 'Inter', sans-serif;
 	line-height: 34px;
 	display: block;
 	margin-bottom: 15px;
@@ -117,9 +115,8 @@ body{
 
 @media only screen and (max-width: 600px) {
 	.zago_main01 {
-	  font-size: 24px;
-	  font-weight: bold;
-	  line-height: 30px;
+	  font-size: 20px;
+	  line-height: 25px;
 	  margin-bottom: 3px;
 	}
   }
@@ -251,7 +248,7 @@ body{
 
   @media only screen and (max-width: 600px) {
 	.link-text_article {
-	  font-size: 22px;
+	  font-size: 17px;
 	  line-height: 1;
 	}
   }
@@ -262,7 +259,7 @@ body{
 	color: black;
 	transition-duration: 0.3s;
 	font-family: 'Inter', sans-serif;
-	font-size: 20px;
+	font-size: 17px;
 	font-weight: normal;
 	display: block;
 }
@@ -991,7 +988,7 @@ h5{
 	right: 0;
 	background: linear-gradient(to bottom, rgba(41, 41, 41, 0) 0%, rgba(41, 41, 41, 0.5) 30%, #212529 80%);
 	color: white;
-	padding: 15px;
+	padding: 20px;
 	padding-bottom: 40px;
 }
 
@@ -1044,7 +1041,6 @@ position: absolute;
 
 .black_block_news2{
 	background-color: #ffffff;
-	border-radius: 4px;
 	max-width: 100%;
 	color: black;
 	padding-left: 25px;
@@ -1052,14 +1048,8 @@ position: absolute;
 	padding-bottom: 25px;
 	padding-top: 30px;
 	height: auto;
+	margin-top: 17px;
 }
-
-@media only screen and (max-width: 600px) {
-	.black_block_news2 {
-	  padding: 10px;
-	  padding-top: 17px;
-	}
-  }
 
 
 
