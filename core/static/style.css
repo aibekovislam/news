@@ -67,7 +67,7 @@ body{
 	margin-top: 1px;
 	font-size: 17px;
 	font-family: 'PT Sans', sans-serif;
-	font-weight: bolder;
+	font-weight: normal;
 }
 
 .news_main2{
@@ -87,7 +87,7 @@ body{
 
 .zago_main0{
 	font-family: 'PT Sans', sans-serif;
-	font-weight: bolder;
+	font-weight: normal;
 	margin-top: 10px;
 	font-size: 17px;
 }
