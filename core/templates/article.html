@@ -211,7 +211,7 @@
 
 <div class="mobile_n">
           <div class="carousel_block">
-            <div id="carouselExampleControlsNoTouching" class="carousel slide carousel pb-3" data-bs-touch="false" data-bs-interval="false">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide carousel" data-bs-touch="false" data-bs-interval="false">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -273,10 +273,7 @@
   </div>
 </div>
 <div class="mobile_n">
-  <div class="container">
-      <div class="row">
-        <div class="col-md-12 mt-3">
-          <div class="black_block_news2">
+          <div class="black_block_news pt-4">
             {% for article in articles %}
               {% if article.right_panel_article %}
                 <h1 class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a></h1>
@@ -285,9 +282,6 @@
               {% endif %}
             {% endfor %}
           </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
   <div class="goriz_ads mt-3">

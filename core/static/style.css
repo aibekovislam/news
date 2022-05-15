@@ -193,9 +193,9 @@ body{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
-	font-family: 'Lora', serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 15px;
-	font-weight: normal;
+	font-weight: bold;
 }
 
 .link-text2:hover{
@@ -261,6 +261,7 @@ body{
 @media only screen and (max-width: 600px) {
 	.revolut {
 	  font-size: 16px;
+	  display: table-cell;
 	}
   }
 
@@ -552,7 +553,6 @@ width: auto;
 	  overflow: hidden;
 	  background-color: #20252a;
 	  position: relative;
-	  border-radius: 6px;
 	}
   }
 
@@ -1078,6 +1078,22 @@ h5{
     overflow: hidden;
 }
 
+.card_mini2{
+	display: table-cell;
+    position: relative;
+    width: 175px;
+    height: 60px;
+}
+
+.cae{
+	position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    overflow: hidden;
+}
 
 .cardssss{
 	display: -webkit-box;
@@ -1085,6 +1101,16 @@ h5{
     padding: 2px 0;
 }
 
+
+.card_img_mini{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: auto;
+}
 
 /*
 experiment
