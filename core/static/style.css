@@ -193,12 +193,24 @@ body{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.3s;
+	font-family: 'Lora', serif;
+	font-size: 15px;
+}
+
+.link-text2:hover{
+	color: #1445ab;
+}
+
+.link-text_za{
+	text-decoration: none;
+	color: black;
+	transition-duration: 0.3s;
 	font-family: 'Inter', sans-serif;
 	font-size: 15px;
 	font-weight: bold;
 }
 
-.link-text2:hover{
+.link-text_za:hover{
 	color: #1445ab;
 }
 

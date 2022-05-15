@@ -190,7 +190,7 @@
           {% if article.right_panel_article %}
             {% if not article.pagination_article %}
             <div class="cardssss">
-              <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text2">{{ article.title }}</a><div class="date_time_cus mt-1">{{ article.created_at|date:"H:i" }}</div></div>
+              <div class="revolut"><a href="{% url 'article' article.slug %}" class="link-text_za">{{ article.title }}</a><div class="date_time_cus mt-1">{{ article.created_at|date:"H:i" }}</div></div>
               <div class="card_mini2">
                   <div class="cae">
                     <img {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="article_picture" class="card_img_mini">
