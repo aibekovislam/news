@@ -131,7 +131,7 @@ button {
   display: inline-block;
 }
 .hamburger2{
-  padding-left: 98px;
+  padding-left: 120px;
   font-family: 'Montserrat', sans-serif;
   color: white;
   font-size: 19px;
@@ -237,13 +237,10 @@ margin: 0 auto; }
 </div>
 <amp-img class="mb-3" width="420"
   height="240" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="НАЗВАНИЕ ИГРЫ"></amp-img>
-  <div class="ham">
-    <a href="{% url 'article' article.slug %}" class="btn-danger2">Читайте полной версии.</a>
-  </div>
-  <hr class="line">
   <p class="log4">{{ article.tt }}</p>
+  <hr class="line">
   {% autoescape off %}<p class="log3">{{ article.text|linebreaksbr }}</p>{% endautoescape %}
-<p id="amp_page"><a href="{% url 'article' article.slug %}" class="btn-danger">Полная версия сайта</a></p>
+<p id="amp_page"><a href="{% url 'article' article.slug %}" class="btn-danger2">Полная версия сайта</a></p>
  
         <p id="storycontent">{{ article.content | ampimg | safe }}</p>
   </body>
