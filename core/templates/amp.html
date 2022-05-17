@@ -22,6 +22,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
@@ -84,10 +87,11 @@ button {
 }
 .log{
   font-size: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Merriweather', serif;
   font-weight: 500;
   padding-left: 9px;
   padding-right: 9px;
+  margin-bottom: 5px;
 }
 .log2{
   font-size: 14px;
@@ -189,6 +193,15 @@ margin: 0 auto; }
   height: auto;
   padding: 10px;
 }
+ .fixed-height-container {
+     position: relative;
+     width: 100%;
+     height: 250px;
+   }
+
+  amp-img.contain img {
+    object-fit: contain;
+  }
 .log5{
   font-size: 17px;
   padding-left: 10px;
@@ -254,8 +267,13 @@ margin: 0 auto; }
   <p class="log2">{{ article.created_at|date:"H:i, d F" }}</p>
   <p class="log2">{{ article.heading }}</p>
 </div>
-<amp-img class="mb-3" width="420"
-  height="240" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="НАЗВАНИЕ ИГРЫ"></amp-img>
+<!--<amp-img class="mb-3" width="100%"
+  height="300px" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="НАЗВАНИЕ ИГРЫ"></amp-img>-->
+<div class="fixed-height-container">
+    <amp-img class="contain"
+      layout="fill"
+      {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="article_picture"></amp-img>
+  </div>
   <p class="log4">{{ article.tt }}</p>
   <hr class="line">
   {% autoescape off %}<p class="log3">{{ article.text|linebreaksbr }}</p>{% endautoescape %}
