@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '70-pxvs!io_e4dbasy78x^!(i=rpd52&gj4b#+tq7kg*^pzlgs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #DEBUG = os.environ.get("DEBUG", False)
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
@@ -88,14 +88,14 @@ WSGI_APPLICATION = 'news.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'aibekovislam$kyrgyzstan_news_db',
-        'USER': 'aibekovislam',
-        'PASSWORD': 'islam2005',
-        'HOST': 'aibekovislam.mysql.pythonanywhere-services.com',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'aibekovislam$kyrgyzstan_news_db',
+        #'USER': 'aibekovislam',
+        #'PASSWORD': 'islam2005',
+        #'HOST': 'aibekovislam.mysql.pythonanywhere-services.com',
+        #'PORT': '3306'
     }
 }
 

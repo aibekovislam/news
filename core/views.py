@@ -3,14 +3,17 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponse, get_object_or_404
 from .models import *
 from django.shortcuts import render, HttpResponse, redirect
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # importing models and libraries
 from django.views import generic
 from django.views.decorators.http import require_GET
 from django.http import HttpResponse
+from django.views.generic.list import ListView
  
 
- 
+
+def post(request):
+    pass 
 # class based view for each post in amp template
 def amp(request, article_slug):
         article = get_object_or_404(Article, slug=article_slug)
@@ -94,6 +97,13 @@ def HandleNotFound(request, exception):
    #     request,
     #    {"main_article": main_articles}
     #)
+
+#class PostView(ListView):
+#     model = Article
+#     paginate_by = 5
+#     context_object_name = 'articles'
+#     template_name = 'test.html'
+#     ordering = ['title']
 
 
 def article_page(request, article_slug):

@@ -250,8 +250,6 @@
                 <a href="{% url 'article' article.slug %}"><img class="img-fluid" {% if article.picture %} src="{{ article.picture.url }}" {% endif %} alt="..."></a>
                 <!--<a class="text-link2">{{ article.heading }}</a>-->
                   <div class="news_main"><a href="{% url 'article' article.slug %}" class="link-text_article mb-2">{{ article.title }}</a>
-                    <a class="text-link2">{{ article.heading }}</a>
-                  <meta itemprop="datePublished" content="{{ article.created_at|date:"o-m-d" }}"><p class="date_time5 d-inline ms-2">{{ article.created_at|date:"H:i, d F" }}</p>
                   </div>
             </div>
           {% endif %}
